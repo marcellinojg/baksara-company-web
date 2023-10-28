@@ -41,7 +41,6 @@ export const DarkModeButton = (props: ButtonProps) => {
 export const PrimaryButton = (props: ButtonProps) => {
     const {
         type = 'button',
-        isLoading = false,
         onClick = () => { },
         className,
         children = <></>
@@ -55,7 +54,6 @@ export const PrimaryButton = (props: ButtonProps) => {
 export const SecondaryButton = (props: ButtonProps) => {
     const {
         type = 'button',
-        isLoading = false,
         onClick = () => { },
         className,
         children = <></>

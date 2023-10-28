@@ -5,7 +5,7 @@ import { DarkModeButton, LanguageButton, PrimaryButton, SecondaryButton } from "
 import { IconType } from "react-icons"
 import { ROUTES } from "../../models/consts/routes"
 import { FaDownload, FaHome, FaQuestionCircle, FaSignInAlt, FaUsers } from "react-icons/fa"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { HiNewspaper } from "react-icons/hi2"
 
 
@@ -14,7 +14,6 @@ const Sidebar = (props: SidebarProps) => {
     const { translate } = useTranslation()
     const sidebarRef = useRef(null)
     useOutsideAlerter(sidebarRef, () => setShowSidebar(false))
-    const navigate = useNavigate()
 
     useEffect(() => {
         console.log(showSidebar)

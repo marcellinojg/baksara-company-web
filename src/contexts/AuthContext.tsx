@@ -34,8 +34,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const { translate } = useTranslation()
 
     const signIn = async (user: LoginUser) => {
+        console.log(user)
         try {
-            // showLoader()
+            showLoader()
             // const loginResponse = await postLogin(user)
             // setAccessToken(await loginResponse.data.accessToken)
             // if (loginResponse.error != null) throw loginResponse.error
