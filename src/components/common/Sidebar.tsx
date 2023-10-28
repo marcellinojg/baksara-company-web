@@ -20,7 +20,7 @@ const Sidebar = (props: SidebarProps) => {
     }, [showSidebar])
 
     return <>
-        {showSidebar && <div className="w-screen h-screen fixed top-0 z-[30] bg-black bg-opacity-70 left-0 lg:hidden block transition duration-300"></div>}
+        {showSidebar && <div className="w-screen h-full fixed top-0 z-[30] bg-black bg-opacity-70 left-0 lg:hidden block transition duration-300"></div>}
         <div ref={sidebarRef}
             className={`sidebar ${!showSidebar && 'md:translate-x-[40vw] translate-x-[85vw]'}`}>
             <span className="text-2xl font-semibold">{translate('Selamat Datang!')}</span>

@@ -8,7 +8,7 @@ const ExternalLayout = ({ children, showBanner = false }: { children: ReactNode,
     const [showSidebar, setShowSidebar] = useState<boolean>(false)
     const { translate } = useTranslation()
     return <>
-        <header className="w-full">
+        <header className="w-full h-[100dvh] fixed z-10">
             <Navbar setShowSidebar={setShowSidebar} />
             <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
         </header>
@@ -23,10 +23,10 @@ const ExternalLayout = ({ children, showBanner = false }: { children: ReactNode,
 
             {children}
         </main>
-        <footer>
-            <div className="bg-white text-black flex justify-center lg:flex-row flex-col items-center gap-[5vw] pt-20">
+        <footer className="w-full bg-yellow-100">
+            <div className=" text-black flex justify-center lg:flex-row flex-col items-center gap-[5vw] pt-20">
                 <Slide className="lg:w-4/12 md:w-2/3 w-10/12">
-                    <div className=" flex flex-col gap-5">
+                    <div className="flex flex-col gap-5 w-full">
                         <h1 className="font-bold text-secondary md:text-5xl text-4xl w-11/12">{translate('Unduh sekarang di App Store dan Play Store.')}</h1>
                         <span className="md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quo.</span>
                         <div className="flex items-center gap-2">

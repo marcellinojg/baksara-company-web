@@ -6,7 +6,7 @@
 
 @layer components {
   .sidebar {
-    @apply fixed h-screen bg-white floating-shadow-lg right-0 top-0 
+    @apply fixed h-full bg-white floating-shadow-lg right-0 top-0 
     lg:hidden flex flex-col px-[8%] pt-12 pb-8 justify-between gap-6
     md:w-[40vw] w-[85vw] z-[30]
     transition duration-300;
@@ -16,7 +16,6 @@
 body {
   scroll-behavior: smooth;
   font-family: "Open Sans", sans-serif;
-  overflow-x: hidden;
 }
 
 .text-primary {
