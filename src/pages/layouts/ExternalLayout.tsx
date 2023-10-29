@@ -22,7 +22,7 @@ const ExternalLayout = ({ children, showBanner = false, title = 'Baksara Indones
         <main className={`min-w-screen min-h-screen relative`}>
             {showBanner === true &&
                 <div className="top-[80px] py-1.5 text-sm text-center flex items-end justify-center bg-primary-light dark:bg-primary-dark transition duration-300 absolute w-full text-white">
-                    <p>
+                    <p className="lg:pt-0 md:pt-4">
                         Lorem ipsum dolor sit amet consectetur ! [4] <br className="md:hidden block" />
                         <a href="https://www.google.com" target="_blank" className="font-bold ml-2 underline">Lorem, ipsum. → [5]</a>
                     </p>
