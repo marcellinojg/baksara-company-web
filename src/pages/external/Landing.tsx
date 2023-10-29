@@ -15,10 +15,10 @@ const LandingPage = () => {
             <div className="lg:w-4/12 w-10/12 flex flex-col lg:gap-8 gap-6 ">
                 <Fade>
                     <p className="md:text-5xl text-4xl font-family-secondary self-start font-bold">
-                        <span className="highlight relative text-primary dark:text-primary-dark">Lorem, ipsum dolor.</span> <br />
-                        <span className="text-primary-lighter dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, incidunt.</span>
+                        <span className="highlight relative text-primary dark:text-primary-dark">Lorem, ipsum dolor. [1]</span> <br />
+                        <span className="text-primary-lighter dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, incidunt. [2]</span>
                     </p>
-                    <p className="md:text-xl text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est voluptatem explicabo cupiditate quasi tenetur dicta praesentium, perferendis harum fugit dignissimos magnam in voluptatum fugiat voluptatibus libero doloribus dolorum et ipsum!</p>
+                    <p className="md:text-xl text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est voluptatem explicabo cupiditate quasi tenetur dicta praesentium, perferendis harum fugit dignissimos magnam in voluptatum fugiat voluptatibus libero doloribus dolorum et ipsum! [3]</p>
                     <PrimaryButton
                         onClick={() => window.open("https://www.instagram.com", '_blank')}
                         className="flex items-center justify-center gap-4 w-[250px] p-2.5  rounded font-semibold"

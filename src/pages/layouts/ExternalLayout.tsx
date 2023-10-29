@@ -23,8 +23,8 @@ const ExternalLayout = ({ children, showBanner = false, title = 'Baksara Indones
             {showBanner === true &&
                 <div className="top-[80px] py-1.5 text-sm text-center flex items-end justify-center bg-primary-light dark:bg-primary-dark transition duration-300 absolute w-full text-white">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur ! <br className="md:hidden block" />
-                        <a href="https://www.google.com" target="_blank" className="font-bold ml-2 underline">Lorem, ipsum. →</a>
+                        Lorem ipsum dolor sit amet consectetur ! [4] <br className="md:hidden block" />
+                        <a href="https://www.google.com" target="_blank" className="font-bold ml-2 underline">Lorem, ipsum. → [5]</a>
                     </p>
                 </div>
             }
@@ -44,7 +44,7 @@ const ExternalLayout = ({ children, showBanner = false, title = 'Baksara Indones
                             Animi totam molestiae repellat possimus ratione ipsam reprehenderit consequuntur repellendus fuga,
                             placeat distinctio hic provident qui, soluta iste,
                             quisquam eaque quaerat velit aliquid suscipit saepe.
-                            Perspiciatis consectetur, repudiandae rerum rem ab cum!
+                            Perspiciatis consectetur, repudiandae rerum rem ab cum! [7]
                         </p>
                         <span className="font-bold text-xl text-primary dark:text-white mt-6 mb-2.5">
                             {translate('Unduh Sekarang !')}

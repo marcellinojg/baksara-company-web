@@ -13,6 +13,7 @@ const en_EN: Record<string, string> = {
     'Ikuti kami di Instagram': "Follow us on Instagram",
     'Didukung oleh': 'Supported by',
     'Baksara Indonesia | Tentang Kami': 'Baksara Indonesia | About Us',
+    'Perkenalkan Tim Kami': 'Meet Our Team',
 }
 
 export default en_EN
