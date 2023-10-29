@@ -19,7 +19,7 @@ const Navbar = (props: NavbarProps) => {
             </Link>
 
             {/* Primary Navbar */}
-            <div className="items-center gap-6 grow lg:flex hidden dark:text-white text-primary">
+            <div className="items-center gap-6 grow lg:flex hidden dark:text-white text-primary font-semibold">
                 <Link to={ROUTES.EXTERNAL.LANDING}>{translate('Beranda')}</Link>
                 <Link to={ROUTES.EXTERNAL.LANDING}>{translate('Tentang Kami')}</Link>
                 <Link to={ROUTES.EXTERNAL.LANDING}>{translate('Berita')}</Link>

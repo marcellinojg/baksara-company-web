@@ -7,7 +7,9 @@ const en_EN: Record<string, string> = {
     'Masuk': 'Sign In',
     'Unduh Aplikasi': 'Download App',
     'Unduh sekarang di App Store dan Play Store.': 'Download now in App Store and Play Store.',
-    'Hak cipta dilindungi': 'All rights reserved'
+    'Hak cipta dilindungi': 'All rights reserved',
+    'Unduh Sekarang !': 'Download Now !',
+    'Hubungi Kami': 'Contact Us',
 }
 
 export default en_EN
