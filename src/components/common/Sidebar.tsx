@@ -33,7 +33,7 @@ const Sidebar = (props: SidebarProps) => {
                     <span className="font-semibold">{translate('Masuk')}</span>
                     <FaSignInAlt />
                 </PrimaryButton>
-                <SecondaryButton className="w-full flex justify-between items-center rounded py-3 px-6">
+                <SecondaryButton className="w-full flex justify-between items-center rounded py-3 px-6 text-primary dark:text-white">
                     <span className="font-semibold">{translate('Unduh Aplikasi')}</span>
                     <FaDownload />
                 </SecondaryButton>

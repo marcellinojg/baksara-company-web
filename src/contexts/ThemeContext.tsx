@@ -27,8 +27,10 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 
 
     return <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
-        <div className={!isDarkMode ? "dark" : ""}>
-            {children}
+        <div className={`${isDarkMode ? "dark" : ""}`}>
+            <div className="bg-white dark:bg-primary-lighter transition duration-300">
+                {children}
+            </div>
         </div>
     </ThemeContext.Provider>
 }
