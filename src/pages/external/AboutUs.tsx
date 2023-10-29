@@ -1,13 +1,15 @@
 import { Fade } from "react-awesome-reveal"
 import ExternalLayout from "../layouts/ExternalLayout"
 import useTranslation from "../../hooks/useTranslation"
+import AvatarTeam from "../../components/common/AvatarTeam"
+import SupportedBy from "../../components/common/SupportedByBanner"
 
 
 const AboutUsPage = () => {
     const { translate } = useTranslation()
     return <ExternalLayout title={translate('Baksara Indonesia | Tentang Kami')}>
         {/* Section 1 About Us */}
-        <div className="min-w-screen min-h-[100dvh] flex items-center justify-center">
+        <div className="min-w-screen min-h-[100dvh] flex items-center justify-center pb-12">
             <div className="lg:w-2/3 w-10/12 flex lg:flex-row flex-col items-center justify-center">
                 <Fade>
                     <img src="/images/maskot-stand-cropped.png" width={150} className="lg:h-[60vh] lg:w-auto lg:pt-0 pt-24" alt="Maskot Baksara Standing" />
@@ -44,12 +46,29 @@ const AboutUsPage = () => {
             </div>
         </div>
         {/* Meet our team */}
-        <div className="min-w-screen min-h-[100dvh] flex items-center justify-center text-primary dark:text-white">
-            <h1 className="font-family-secondary font-bold lg:text-4xl text-2xl">{translate('Perkenalkan Tim Kami')}</h1>
-            <div className="flex flex-wrap justify-start items-center gap-4">
-
+        <div className="min-w-screen min-h-[100dvh] flex flex-col items-center justify-start text-primary dark:text-white py-16">
+            <Fade direction="up">
+                <h1 className="font-family-secondary font-bold lg:text-5xl text-4xl">{translate('Perkenalkan Tim Kami')}</h1>
+            </Fade>
+            <div className="flex flex-wrap justify-start items-center lg:gap-20 gap-10 w-10/12 mt-12">
+                <Fade cascade direction="up" damping={0.1}>
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    <AvatarTeam imgUrl="/images/maskot-stand.png" linkedInUrl="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                </Fade>
             </div>
         </div>
+
+        <SupportedBy />
     </ExternalLayout>
 }
 
