@@ -10,7 +10,7 @@ const Navbar = (props: NavbarProps) => {
     const { setShowSidebar } = props
     const { translate } = useTranslation()
 
-    return <nav className="fixed w-full top-0 h-[8vh] min-h-[80px] z-10 bg-navbar-light dark:bg-none dark:bg-primary-light transition duration-300">
+    return <nav className="fixed w-full top-0 h-[75px] z-10 bg-navbar-light dark:bg-none dark:bg-primary-light transition duration-300">
         <div className="flex justify-between items-center lg:px-[12.5vw] md:px-[8vw] px-[7.5vw] h-full gap-[2vw]">
             {/* Brand */}
             <Link to={ROUTES.EXTERNAL.LANDING} className="">
