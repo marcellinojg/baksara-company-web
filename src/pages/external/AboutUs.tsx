@@ -50,7 +50,7 @@ const AboutUsPage = () => {
             <Fade direction="up">
                 <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl">{translate('Perkenalkan Tim Kami')}</h1>
             </Fade>
-            <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 text-primary mt-16 w-10/12 mx-auto gap-y-12">
+            <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 mt-16 w-10/12 mx-auto gap-y-12">
                 <Fade cascade direction="up" damping={0.1}>
                     <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
                     <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
