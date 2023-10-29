@@ -30,24 +30,18 @@ export const AvatarMainTeam = (props: AvatarMainTeamProps) => {
 
     switch (path) {
         case 'cloud':
-            PathElement = <div className="text-2xl floating-shadow-md p-3 rounded-full bg-[#0072b1] hover:bg-[#3a77a9] transition duration-300 absolute -bottom-0 -right-0">
-                <span className="text-white">
-                    <FaLinkedin />
-                </span>
+            PathElement = <div className="text-2xl floating-shadow-lg p-3 rounded-full bg-white transition duration-300 absolute -bottom-0 -right-0">
+                <img src='/images/gcp.png' width={24} className="object-contain w-6 h-6" />
             </div>
             break
         case 'ml':
-            PathElement = <div className="text-2xl floating-shadow-md p-3 rounded-full bg-[#0072b1] hover:bg-[#3a77a9] transition duration-300 absolute -bottom-0 -right-0">
-                <span className="text-white">
-                    <FaLinkedin />
-                </span>
+            PathElement = <div className="text-2xl floating-shadow-lg p-3 rounded-full bg-white transition duration-300 absolute -bottom-0 -right-0">
+                <img src="/images/tensorflow.svg" width={24} className="object-contain w-6 h-6" />
             </div>
             break
         case 'android':
-            PathElement = <div className="text-2xl floating-shadow-md p-3 rounded-full bg-[#0072b1] hover:bg-[#3a77a9] transition duration-300 absolute -bottom-0 -right-0">
-                <span className="text-white">
-                    <FaLinkedin />
-                </span>
+            PathElement = <div className="text-2xl floating-shadow-lg p-3 rounded-full bg-white transition duration-300 absolute -bottom-0 -right-0">
+                <img src="/images/android.svg" width={24} className="object-contain w-6 h-6 scale-[1.75]" />
             </div>
             break
     }
