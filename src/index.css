@@ -8,7 +8,7 @@
   .sidebar {
     @apply fixed h-full bg-white dark:bg-primary-lighter text-black dark:text-white floating-shadow-lg right-0 top-0 
     lg:hidden flex flex-col px-[8%] pt-12 pb-8 justify-between gap-6
-    md:w-[40vw] w-[85vw] z-[30]
+    md:w-[40vw] w-[85vw] z-30
     transition duration-300;
   }
 
@@ -17,6 +17,9 @@
   }
 
 
+}
+*{
+  outline: none;
 }
 
 body {

@@ -14,8 +14,8 @@ const Navbar = (props: NavbarProps) => {
         <div className="flex justify-between items-center lg:px-[12.5vw] md:px-[8vw] px-[7.5vw] h-full gap-[2vw]">
             {/* Brand */}
             <Link to={ROUTES.EXTERNAL.LANDING} className="">
-                <img src="/images/logo-wide-dark.png" width={200} className="md:w-[200px] w-[150px] dark:hidden block" alt="Logo Baksara Wide" />
-                <img src="/images/logo-wide-light.png" width={200} className="md:w-[200px] w-[150px] dark:block hidden" alt="Logo Baksara Wide" />
+                <img src="/images/logo-wide-dark.png" width={170} className="md:w-[170px] w-[150px] dark:hidden block select-none" alt="Logo Baksara Wide" />
+                <img src="/images/logo-wide-light.png" width={170} className="md:w-[170px] w-[150px] dark:block hidden select-none" alt="Logo Baksara Wide" />
             </Link>
 
             {/* Primary Navbar */}
