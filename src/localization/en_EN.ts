@@ -10,6 +10,8 @@ const en_EN: Record<string, string> = {
     'Hak cipta dilindungi': 'All rights reserved',
     'Unduh Sekarang !': 'Download Now !',
     'Hubungi Kami': 'Contact Us',
+    'Ikuti kami di Instagram': "Follow us on Instagram",
+    'Didukung oleh' : 'Supported by'
 }
 
 export default en_EN

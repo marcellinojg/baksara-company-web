@@ -7,7 +7,7 @@
 @layer components {
   .sidebar {
     @apply fixed h-full bg-white dark:bg-primary-lighter text-black dark:text-white floating-shadow-lg right-0 top-0 
-    lg:hidden flex flex-col px-[8%] pt-12 pb-8 justify-between gap-6
+    lg:hidden flex flex-col px-[6%] pt-12 pb-8 justify-between gap-6
     md:w-[40vw] w-[85vw] z-30
     transition duration-300;
   }
@@ -64,7 +64,7 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 20%;
   border-radius: 4px;
   position: absolute;
-  transform: translateY(-50%);
+  transform: translateY(-30%);
   bottom: 0;
   left: 0px;
   background-image: linear-gradient(to right, #ffdbbb, #b39a7e);

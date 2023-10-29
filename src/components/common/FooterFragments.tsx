@@ -5,7 +5,7 @@ import { IconType } from "react-icons"
 export const FooterDownload = () => {
     const { translate } = useTranslation()
 
-    return <div className=" text-black dark:text-white flex justify-center lg:flex-row flex-col items-center gap-[5vw] pt-20 ">
+    return <div id="downloadApp" className=" text-black dark:text-white flex justify-center lg:flex-row flex-col items-center gap-[5vw] pt-20 ">
 
         <div className="lg:w-4/12 md:w-2/3 w-10/12 flex flex-col gap-5">
             <Fade cascade damping={0.5}>

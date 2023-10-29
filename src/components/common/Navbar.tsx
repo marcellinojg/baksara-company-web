@@ -21,9 +21,9 @@ const Navbar = (props: NavbarProps) => {
             {/* Primary Navbar */}
             <div className="items-center gap-6 grow lg:flex hidden dark:text-white text-primary font-semibold">
                 <Link to={ROUTES.EXTERNAL.LANDING}>{translate('Beranda')}</Link>
-                <Link to={ROUTES.EXTERNAL.LANDING}>{translate('Tentang Kami')}</Link>
-                <Link to={ROUTES.EXTERNAL.LANDING}>{translate('Berita')}</Link>
-                <Link to={ROUTES.EXTERNAL.LANDING}>{translate('FAQ')}</Link>
+                <Link to={ROUTES.EXTERNAL.ABOUT_US}>{translate('Tentang Kami')}</Link>
+                <Link to={ROUTES.EXTERNAL.NEWS}>{translate('Berita')}</Link>
+                <Link to={ROUTES.EXTERNAL.FAQ}>{translate('FAQ')}</Link>
             </div>
 
             {/* Secondary Navbar */}
