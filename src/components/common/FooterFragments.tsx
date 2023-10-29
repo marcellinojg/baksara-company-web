@@ -1,6 +1,7 @@
 import { Fade } from "react-awesome-reveal"
 import useTranslation from "../../hooks/useTranslation"
 import { IconType } from "react-icons"
+import DownloadAppLink from "./DownloadAppLink"
 
 export const FooterDownload = () => {
     const { translate } = useTranslation()
@@ -12,12 +13,7 @@ export const FooterDownload = () => {
                 <h1 className="font-bold font-family-secondary md:text-5xl text-4xl w-11/12">{translate('Unduh sekarang di App Store dan Play Store.')}</h1>
                 <span className="md:text-lg text-black dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quo.</span>
                 <div className="flex items-center gap-2">
-                    <a href="https://www.google.com" target="_blank">
-                        <img src="/images/icon-gplay.webp" alt="Download Google Play Store" width={150} />
-                    </a>
-                    <a href="https://www.google.com" target="_blank">
-                        <img src="/images/icon-ios.webp" alt="Download App Store" width={150} />
-                    </a>
+                    <DownloadAppLink />
                 </div>
             </Fade>
         </div>

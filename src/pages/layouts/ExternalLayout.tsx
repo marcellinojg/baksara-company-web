@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import Navbar from "../../components/common/Navbar"
 import Sidebar from "../../components/common/Sidebar"
 import * as FooterFragments from '../../components/common/FooterFragments'
@@ -6,9 +6,14 @@ import useTranslation from "../../hooks/useTranslation"
 import { FaEnvelope, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
 import DownloadAppLink from "../../components/common/DownloadAppLink"
 
-const ExternalLayout = ({ children, showBanner = false }: { children: ReactNode, showBanner?: boolean}) => {
+const ExternalLayout = ({ children, showBanner = false, title = 'Baksara Indonesia' }: { children: ReactNode, showBanner?: boolean, title?: string }) => {
     const [showSidebar, setShowSidebar] = useState<boolean>(false)
     const { translate } = useTranslation()
+
+    useEffect(() => {
+        document.title = title
+    }, [title])
+
     return <>
         <header className="w-full">
             <Navbar setShowSidebar={setShowSidebar} />
