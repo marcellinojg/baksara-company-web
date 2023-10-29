@@ -10,6 +10,7 @@ export default {
         "primary-light": "#6B5B4D",
         "primary-lighter": "#9F8D7F",
         primary: "#4C3B28",
+        "baksara-gray": "#A3A3A3",
       },
     },
   },
