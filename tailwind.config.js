@@ -8,7 +8,7 @@ export default {
         "primary-darker": "#282218",
         "primary-dark": "#322A1E",
         "primary-light": "#6B5B4D",
-        "primary-lighter": "#897C72",
+        "primary-lighter": "#9F8D7F",
         primary: "#4C3B28",
       },
     },

@@ -6,7 +6,7 @@ import useTranslation from "../../hooks/useTranslation"
 import { FaEnvelope, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
 import DownloadAppLink from "../../components/common/DownloadAppLink"
 
-const ExternalLayout = ({ children, showBanner = false }: { children: ReactNode, showBanner?: boolean }) => {
+const ExternalLayout = ({ children, showBanner = false }: { children: ReactNode, showBanner?: boolean}) => {
     const [showSidebar, setShowSidebar] = useState<boolean>(false)
     const { translate } = useTranslation()
     return <>
@@ -14,11 +14,12 @@ const ExternalLayout = ({ children, showBanner = false }: { children: ReactNode,
             <Navbar setShowSidebar={setShowSidebar} />
             <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
         </header>
-        <main className="min-w-screen min-h-screen relative">
+        <main className={`min-w-screen min-h-screen relative`}>
             {showBanner === true &&
                 <div className="top-[80px] py-1.5 text-sm text-center flex items-end justify-center bg-primary-light dark:bg-primary-dark transition duration-300 absolute w-full text-white">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur.!<a href="https://www.google.com" target="_blank" className="font-bold ml-2">Lorem, ipsum. →</a>
+                        Lorem ipsum dolor sit amet consectetur ! <br className="md:hidden block" />
+                        <a href="https://www.google.com" target="_blank" className="font-bold ml-2 underline">Lorem, ipsum. →</a>
                     </p>
                 </div>
             }
@@ -57,8 +58,8 @@ const ExternalLayout = ({ children, showBanner = false }: { children: ReactNode,
                     </div>
                 </div>
                 <div className="flex lg:flex-row flex-col items-center justify-between gap-2.5 py-4 lg:px-[10vw] px-[5vw]  border-t-[1px] border-primary-light dark:border-primary-darker">
-                    <span className="text-black dark:text-white ">
-                        2023 © Baksara Indonesia. {translate('Hak cipta dilindungi')}.
+                    <span className="text-black dark:text-white md:text-start text-center">
+                        2023 © Baksara Indonesia. <br className="md:hidden block" /> {translate('Hak cipta dilindungi')}.
                     </span>
                     <div className="flex items-center gap-3">
                         <FooterFragments.FooterSocialButton Icon={FaInstagram} to="https://www.instagram.com" />
