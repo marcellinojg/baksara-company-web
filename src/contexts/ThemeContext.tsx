@@ -1,5 +1,4 @@
 import { Dispatch, ReactNode, SetStateAction, createContext, useEffect } from "react"
-import PropTypes from 'prop-types';
 
 interface ThemeContextModel {
     isDarkMode: boolean
@@ -33,8 +32,4 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
             </div>
         </div>
     </ThemeContext.Provider>
-}
-
-ThemeProvider.propTypes = {
-    children: PropTypes.node.isRequired
 }

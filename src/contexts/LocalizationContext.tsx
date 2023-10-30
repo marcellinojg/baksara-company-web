@@ -1,7 +1,6 @@
 import { Dispatch, ReactNode, SetStateAction, createContext } from "react";
 import id_ID from "../localization/id_ID";
 import en_EN from "../localization/en_EN";
-import PropTypes from 'prop-types';
 
 interface LocalizationContextModel {
     selectLocale: (key: 'id-ID' | 'en-EN') => void
@@ -47,8 +46,4 @@ export const LocalizationProvider = (props: LocalizationProviderProps) => {
     return <LocalizationContext.Provider value={{ selectLocale, translate, getLocale }}>
         {children}
     </LocalizationContext.Provider>
-}
-
-LocalizationProvider.propTypes = {
-    children: PropTypes.node.isRequired
 }

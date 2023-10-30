@@ -4,6 +4,10 @@ import { PrimaryButton } from "../../components/common/Button"
 import { FaInstagram } from "react-icons/fa"
 import useTranslation from "../../hooks/useTranslation"
 import SupportedBy from "../../components/common/SupportedByBanner"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import { Autoplay } from "swiper/modules"
 
 
 const LandingPage = () => {
@@ -34,6 +38,53 @@ const LandingPage = () => {
         </div>
         <div className="lg:-translate-y-1/3 lg:mt-0 mt-12">
             <SupportedBy />
+        </div>
+        <div className="min-w-screen- min-h-[50dvh] py-12 mt-16  bg-primary-light flex items-center justify-center dark:bg-primary-dark overflow-hidden relative transition duration-300">
+            <div className="w-10/12 mx-auto">
+                <Swiper
+                    slidesPerView={1}
+                    spaceBetween={150}
+                    autoplay={{
+                        delay: 4000,
+                    }}
+                    className="cursor-grab"
+                    loop={true}
+                    modules={[Autoplay]}
+                >
+                    <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
+                        <img src="/images/maskot-wave.png" width={400} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
+                        <div className="lg:pr-[10%] lg:w-2/3 flex flex-col gap-3">
+                            <h2 className="text-white font-bold font-family-secondary lg:text-4xl text-2xl">Title title title 1</h2>
+                            <p className="text-white lg:text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus.</p>
+                            <span className="font-semibold text-white">Sumber: Sumber (1970)</span>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
+                        <img src="/images/maskot-wave.png" width={400} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
+                        <div className="lg:pr-[10%] lg:w-2/3 flex flex-col gap-3">
+                            <h2 className="text-white font-bold font-family-secondary lg:text-4xl text-2xl">Title title title 2</h2>
+                            <p className="text-white lg:text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus.</p>
+                            <span className="font-semibold text-white">Sumber: Sumber (1970)</span>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
+                        <img src="/images/maskot-wave.png" width={400} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
+                        <div className="lg:pr-[10%] lg:w-2/3 flex flex-col gap-3">
+                            <h2 className="text-white font-bold font-family-secondary lg:text-4xl text-2xl">Title title title 3</h2>
+                            <p className="text-white lg:text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus.</p>
+                            <span className="font-semibold text-white">Sumber: Sumber (1970)</span>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
+                        <img src="/images/maskot-wave.png" width={400} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
+                        <div className="lg:pr-[10%] lg:w-2/3 flex flex-col gap-3">
+                            <h2 className="text-white font-bold font-family-secondary lg:text-4xl text-2xl">Title title title 4</h2>
+                            <p className="text-white lg:text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus.</p>
+                            <span className="font-semibold text-white">Sumber: Sumber (1970)</span>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
+            </div>
         </div>
 
     </ExternalLayout>

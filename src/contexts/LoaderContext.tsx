@@ -1,6 +1,5 @@
 import { createContext, ReactNode, useState } from 'react';
 import { FullPageLoader } from '../components/common/Loader';
-import PropTypes from 'prop-types';
 
 
 interface LoaderContextModel {
@@ -29,8 +28,4 @@ export const LoaderProvider = ({ children }: { children: ReactNode }) => {
         {children}
     </LoaderContext.Provider>
 
-}
-
-LoaderProvider.propTypes = {
-    children: PropTypes.node.isRequired
 }
