@@ -5,7 +5,6 @@ const formatDate = (date: string, locale: 'id-ID' | 'en-EN') => {
 
     return dateObj.toLocaleDateString(locale, {
         day: 'numeric',
-        weekday: 'long',
         month: 'long',
         year: 'numeric'
     })
