@@ -3,13 +3,15 @@ import useTranslation from "../../hooks/useTranslation"
 import ExternalLayout from "../layouts/ExternalLayout"
 import { LoginUser } from "../../models/interface/auth"
 import { PrimaryButton } from "../../components/common/Button"
+import { ROUTES } from "../../models/consts/routes"
+import { Link } from "react-router-dom"
 
 const LoginPage = () => {
     const { translate } = useTranslation()
     const { register, formState: { errors }, handleSubmit } = useForm<LoginUser>()
 
     const onSubmit: SubmitHandler<LoginUser> = (data: LoginUser) => {
-
+        console.log(data)
     }
 
     return <ExternalLayout showFooter={false} title={translate("Baksara Indonesia | Masuk")}>
@@ -45,9 +47,11 @@ const LoginPage = () => {
                     </div>
                 </div>
                 <div className="w-11/12 mx-auto">
-                    <PrimaryButton className="w-full px-4 py-3 rounded font-semibold" type="submit">
-                        {translate('Sign In')}
-                    </PrimaryButton>
+                    <Link to={ROUTES.INTERNAL.DASHBOARD}>
+                        <PrimaryButton className="w-full px-4 py-3 rounded font-semibold" type="submit">
+                            {translate('Sign In')}
+                        </PrimaryButton>
+                    </Link>
                 </div>
             </form>
         </div>

@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",
     "react-icons": "^4.11.0",
+    "react-initials-avatar": "^1.1.2",
     "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.17.0",
     "swiper": "^11.0.3",

@@ -4,5 +4,10 @@ export interface LoginUser {
     password: string
 }
 
+export interface User {
+    name : string
+    token : string
+}
+
 
 

@@ -1,13 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { RedirectAuth, RequireAuth } from './utils/auth';
 import { ROUTES } from "./models/consts/routes";
 import LandingPage from "./pages/external/Landing";
-import { NotFoundPage } from "./components/errors/NotFoundPage";
 import AboutUsPage from "./pages/external/AboutUs";
 import NewsPage from "./pages/external/News";
 import FaqPage from "./pages/external/Faq";
 import ScrollToTop from "./utils/scrollToTop";
 import LoginPage from "./pages/external/Login";
+import DashboardPage from "./pages/internal/Dashboard";
 
 
 const AppRoutes = () => {
@@ -37,6 +37,11 @@ const AppRoutes = () => {
                         path={ROUTES.EXTERNAL.LOGIN}
                         element={<LoginPage />}
                     />
+                    {/* Temp */}
+                    <Route
+                        path={ROUTES.INTERNAL.DASHBOARD}
+                        element={<DashboardPage />}
+                    />
                 </Route>
 
                 {/* Internal Routes */}
@@ -48,7 +53,7 @@ const AppRoutes = () => {
                 {/* Not found */}
                 <Route
                     path="*"
-                    element={<NotFoundPage />}
+                    element={<Navigate to={ROUTES.EXTERNAL.LANDING} />}
                 />
             </Routes>
         </BrowserRouter>

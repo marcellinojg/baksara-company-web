@@ -9,7 +9,9 @@ export const ROUTES = {
         LOGIN: '/sign-in'
     },
     INTERNAL: {
-
+        DASHBOARD: '/internal/dashboard',
+        CREATE_NEWS: '/internal/news/create',
+        EDIT_NEWS: '/internal/news/:id/edit',
     },
     OTHER: {
 
@@ -21,7 +23,7 @@ export const DYNAMIC_ROUTES = {
 
     },
     INTERNAL: {
-
+        EDIT_NEWS: (id: string) => `/internal/news/${id}/edit`,
     },
     OTHER: {
 
