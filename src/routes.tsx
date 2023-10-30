@@ -7,6 +7,7 @@ import AboutUsPage from "./pages/external/AboutUs";
 import NewsPage from "./pages/external/News";
 import FaqPage from "./pages/external/Faq";
 import ScrollToTop from "./utils/scrollToTop";
+import LoginPage from "./pages/external/Login";
 
 
 const AppRoutes = () => {
@@ -31,6 +32,10 @@ const AppRoutes = () => {
                     <Route
                         path={ROUTES.EXTERNAL.FAQ}
                         element={<FaqPage />}
+                    />
+                    <Route
+                        path={ROUTES.EXTERNAL.LOGIN}
+                        element={<LoginPage />}
                     />
                 </Route>
 
