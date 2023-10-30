@@ -30,10 +30,12 @@ const Navbar = (props: NavbarProps) => {
             <div className="items-center gap-3 lg:flex hidden">
                 <DarkModeButton />
                 <LanguageButton />
-                <PrimaryButton className="flex items-center justify-center gap-2 rounded py-2 px-5 font-bold floating-shadow-md">
-                    <FaSignInAlt />
-                    {translate('Masuk')}
-                </PrimaryButton>
+            <Link to={ROUTES.EXTERNAL.LOGIN}>
+                    <PrimaryButton className="flex items-center justify-center gap-2 rounded py-2 px-5 font-bold floating-shadow-md">
+                        <FaSignInAlt />
+                        {translate('Masuk')}
+                    </PrimaryButton>
+                </Link>
             </div>
             <button className="text-3xl lg:hidden block text-primary dark:text-white" type="button" onClick={() => setShowSidebar(true)}>
                 <HiOutlineBars3 />

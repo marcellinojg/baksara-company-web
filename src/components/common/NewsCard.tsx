@@ -1,8 +1,9 @@
 import { FaPaperPlane } from "react-icons/fa"
 import useTranslation from "../../hooks/useTranslation"
 import formatDate from "../../utils/formatDate"
+import NewsModel from "../../models/interface/news"
 
-const NewsCard = (props: NewsCardProps) => {
+const NewsCard = (props: NewsModel) => {
     const { getLocale } = useTranslation()
     const { imgUrl, date, title, description, source, sourceYear, link } = props
 
@@ -28,12 +29,3 @@ const NewsCard = (props: NewsCardProps) => {
 
 export default NewsCard
 
-interface NewsCardProps {
-    date: string
-    imgUrl: string
-    title: string
-    description: string
-    source: string
-    sourceYear: number
-    link: string
-}

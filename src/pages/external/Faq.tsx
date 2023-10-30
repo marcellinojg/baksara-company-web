@@ -3,7 +3,7 @@ import ExternalLayout from "../layouts/ExternalLayout"
 
 
 const FaqPage = () => {
-    return <ExternalLayout>
+    return <ExternalLayout title="Baksara Indonesia | FAQ">
         <Jumbotron>
             <span>Frequently <br /> Asked<br /> Questions</span>
         </Jumbotron>

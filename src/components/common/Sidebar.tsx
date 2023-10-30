@@ -35,10 +35,12 @@ const Sidebar = (props: SidebarProps) => {
                 <SidebarItem to={ROUTES.EXTERNAL.ABOUT_US} label={translate('Tentang Kami')} Icon={FaUsers} />
                 <SidebarItem to={ROUTES.EXTERNAL.NEWS} label={translate('Berita')} Icon={HiNewspaper} />
                 <SidebarItem to={ROUTES.EXTERNAL.FAQ} label={translate('FAQ')} Icon={FaQuestionCircle} />
-                <PrimaryButton className="w-full flex justify-between items-center rounded py-3 px-6 mt-8 mb-4 text-white">
-                    <span className="font-semibold">{translate('Masuk')}</span>
-                    <FaSignInAlt />
-                </PrimaryButton>
+                <Link to={ROUTES.EXTERNAL.LOGIN}>
+                    <PrimaryButton className="w-full flex justify-between items-center rounded py-3 px-6 mt-8 mb-4 text-white">
+                        <span className="font-semibold">{translate('Masuk')}</span>
+                        <FaSignInAlt />
+                    </PrimaryButton>
+                </Link>
                 <SecondaryButton
                     onClick={handleScrollDownload}
                     className="w-full flex justify-between items-center rounded py-3 px-6 text-primary dark:text-white"

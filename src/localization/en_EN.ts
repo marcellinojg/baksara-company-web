@@ -14,9 +14,16 @@ const en_EN: Record<string, string> = {
     'Didukung oleh': 'Supported by',
     'Baksara Indonesia | Tentang Kami': 'Baksara Indonesia | About Us',
     'Baksara Indonesia | Berita': 'Baksara Indonesia | News',
+    "Baksara Indonesia | Masuk": '"Baksara Indonesia | Sign In',
     'Perkenalkan Tim Kami': 'Meet Our Team',
-    'Apa Kata Orang Tentang Baksara' : 'What People Say About Baksara',
-    'Sumber' : 'Source'
+    'Apa Kata Orang Tentang Baksara': 'What People Say About Baksara',
+    'Sumber': 'Source',
+    'Kata Sandi': 'Password',
+    'Nama Pengguna': 'Username',
+    'Masukkan nama pengguna anda' : 'Please enter your username',
+    'Masukkan kata sandi anda' : 'Please enter your password',
+    'Nama pengguna harus diisi' : 'Username is required',
+    'Kata sandi harus diisi' : 'Password is required',
 }
 
 export default en_EN
