@@ -4,7 +4,7 @@ import useTranslation from "../../hooks/useTranslation"
 
 export const TestimoniSlider = (props: TestimoniSliderProps) => {
     const { name, role, testimoni } = props
-    return <div className="bg-white text-center flex flex-col dark:bg-white floating-shadow-md rounded relative min-h-24 lg:w-[400px] w-11/12 px-6 pt-24 py-12 mx-auto">
+    return <div className="bg-white text-center flex flex-col dark:bg-primary floating-shadow-md rounded relative min-h-24 lg:w-[400px] w-11/12 px-6 pt-24 py-12 mx-auto">
         <img src="/images/maskot-stand-cropped.png" alt="" className="absolute floating-shadow-md left-1/2 -translate-x-1/2 -top-12 rounded-full h-28 w-28 object-contain bg-navbar-light" />
         <b className="text-xl">{name}</b>
         <span className="break-words text-sm">{role}</span>
