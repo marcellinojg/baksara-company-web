@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from "swiper/modules"
+import { ActivitySlider, TestimoniSlider } from "../../components/common/Slide"
 
 
 const LandingPage = () => {
@@ -52,42 +53,77 @@ const LandingPage = () => {
                     modules={[Autoplay]}
                 >
                     <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
-                        <img src="/images/maskot-wave.png" width={400} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
-                        <div className="lg:pr-[10%] lg:w-2/3 flex flex-col gap-3">
-                            <h2 className="text-white font-bold font-family-secondary lg:text-4xl text-2xl">Title title title 1</h2>
-                            <p className="text-white lg:text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus.</p>
-                            <span className="font-semibold text-white">Sumber: Sumber (1970)</span>
-                        </div>
+                        <ActivitySlider
+                            imgAlt="Gambar Aktivitas"
+                            imgUrl="/images/maskot-wave.png"
+                            title="Title title title 1"
+                            description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus."
+                            source="Media Baksara"
+                            sourceYear={1970}
+                        />
                     </SwiperSlide>
                     <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
-                        <img src="/images/maskot-wave.png" width={400} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
-                        <div className="lg:pr-[10%] lg:w-2/3 flex flex-col gap-3">
-                            <h2 className="text-white font-bold font-family-secondary lg:text-4xl text-2xl">Title title title 2</h2>
-                            <p className="text-white lg:text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus.</p>
-                            <span className="font-semibold text-white">Sumber: Sumber (1970)</span>
-                        </div>
+                        <ActivitySlider
+                            imgAlt="Gambar Aktivitas"
+                            imgUrl="/images/maskot-wave.png"
+                            title="Title title title 2"
+                            description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus."
+                            source="Media Baksara"
+                            sourceYear={1970}
+                        />
                     </SwiperSlide>
                     <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
-                        <img src="/images/maskot-wave.png" width={400} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
-                        <div className="lg:pr-[10%] lg:w-2/3 flex flex-col gap-3">
-                            <h2 className="text-white font-bold font-family-secondary lg:text-4xl text-2xl">Title title title 3</h2>
-                            <p className="text-white lg:text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus.</p>
-                            <span className="font-semibold text-white">Sumber: Sumber (1970)</span>
-                        </div>
+                        <ActivitySlider
+                            imgAlt="Gambar Aktivitas"
+                            imgUrl="/images/maskot-wave.png"
+                            title="Title title title 3"
+                            description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus."
+                            source="Media Baksara"
+                            sourceYear={1970}
+                        />
                     </SwiperSlide>
-                    <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
-                        <img src="/images/maskot-wave.png" width={400} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
-                        <div className="lg:pr-[10%] lg:w-2/3 flex flex-col gap-3">
-                            <h2 className="text-white font-bold font-family-secondary lg:text-4xl text-2xl">Title title title 4</h2>
-                            <p className="text-white lg:text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus.</p>
-                            <span className="font-semibold text-white">Sumber: Sumber (1970)</span>
-                        </div>
+                </Swiper>
+            </div>
+        </div>
+        <div className="min-w-screen flex flex-col items-center justify-start text-primary dark:text-white pt-28 transition duration-300">
+            <Fade direction="up">
+                <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl text-center">{translate('Apa Kata Orang Tentang Baksara')}</h1>
+            </Fade>
+            <div className="w-10/12 mt-12">
+                <Swiper
+                    slidesPerView={1}
+                    breakpoints={{
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1440: {
+                            slidesPerView: 3,
+                        }
+                    }}
+                    autoplay={{
+                        delay: 5000,
+                    }}
+                    className="cursor-grab"
+                    loop={true}
+                    modules={[Autoplay]}
+                >
+                    <SwiperSlide className="py-16">
+                        <TestimoniSlider name="Maskot Baskara S.T M.Eng" role="Dosen Informatika Universitas Baksara" testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum quos sunt vero quas alias delectus culpa quasi quaerat ducimus?" />
+                    </SwiperSlide>
+                    <SwiperSlide className="py-16">
+                        <TestimoniSlider name="Maskot Baskara S.T M.Eng" role="Dosen Informatika Universitas Baksara" testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum quos sunt vero quas alias delectus culpa quasi quaerat ducimus?" />
+                    </SwiperSlide>
+                    <SwiperSlide className="py-16">
+                        <TestimoniSlider name="Maskot Baskara S.T M.Eng" role="Dosen Informatika Universitas Baksara" testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum quos sunt vero quas alias delectus culpa quasi quaerat ducimus?" />
+                    </SwiperSlide>
+                    <SwiperSlide className="py-16">
+                        <TestimoniSlider name="Maskot Baskara S.T M.Eng" role="Dosen Informatika Universitas Baksara" testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum quos sunt vero quas alias delectus culpa quasi quaerat ducimus?" />
                     </SwiperSlide>
                 </Swiper>
             </div>
         </div>
 
-    </ExternalLayout>
+    </ExternalLayout >
 }
 
 export default LandingPage

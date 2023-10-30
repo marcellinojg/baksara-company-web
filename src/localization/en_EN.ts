@@ -14,6 +14,8 @@ const en_EN: Record<string, string> = {
     'Didukung oleh': 'Supported by',
     'Baksara Indonesia | Tentang Kami': 'Baksara Indonesia | About Us',
     'Perkenalkan Tim Kami': 'Meet Our Team',
+    'Apa Kata Orang Tentang Baksara' : 'What People Say About Baksara',
+    'Sumber' : 'Source'
 }
 
 export default en_EN
