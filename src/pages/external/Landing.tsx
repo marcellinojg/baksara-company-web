@@ -15,13 +15,14 @@ const LandingPage = () => {
     const { translate } = useTranslation()
     return <ExternalLayout showBanner={true}>
         <div className="w-full min-h-[100dvh] flex lg:flex-row flex-col-reverse items-center justify-center lg:pt-0 pt-[150px]">
-            <img src="/images/ternary-pattern-dark.png" width={200} className="absolute select-none block dark:hidden opacity-[0.03] lg:h-[150vh] top-14 w-auto lg:rotate-12" alt="" />
-            <img src="/images/ternary-pattern-light.png" width={200} className="absolute select-none hidden dark:block opacity-[0.05] lg:h-[150vh] top-14 w-auto lg:rotate-12" alt="" />
-            <div className="lg:w-4/12 w-10/12 flex flex-col lg:gap-8 gap-6 ">
+            {/* <img src="/images/ternary-pattern-dark.png" width={200} className="absolute select-none block dark:hidden opacity-[0.03] lg:h-[150vh] top-14 w-auto lg:rotate-12" alt="" /> */}
+            {/* <img src="/images/ternary-pattern-light.png" width={200} className="absolute select-none hidden dark:block opacity-[0.05] lg:h-[150vh] top-14 w-auto lg:rotate-12" alt="" /> */}
+            <div className="xl:w-4/12 lg:w-6/12 w-10/12 flex flex-col lg:gap-8 gap-6 xl:translate-x-0 lg:translate-x-24">
                 <Fade>
-                    <p className="lg:text-5xl md:text-4xl text-3xl font-family-secondary self-start font-bold">
-                        <span className="highlight relative text-primary dark:text-primary-dark">Lorem, ipsum dolor. [1]</span> <br />
-                        <span className="text-primary-lighter dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, incidunt. [2]</span>
+                    <p className="font-family-secondary self-start font-bold">
+                        <span className="highlight lg:text-[5vh] md:text-4xl text-[8vw] relative text-primary dark:text-primary-dark">Lorem, ipsum dolor. [1]</span>
+                        <br />
+                        <span className="text-primary-lighter lg:text-[4vh] md:text-3xl text-2xl dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, incidunt. [2]</span>
                     </p>
                     <p className="md:text-xl text-black dark:text-white">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est voluptatem explicabo cupiditate quasi tenetur dicta praesentium, perferendis harum fugit dignissimos magnam in voluptatum fugiat voluptatibus libero doloribus dolorum et ipsum! [3]
@@ -35,8 +36,8 @@ const LandingPage = () => {
                     </PrimaryButton>
                 </Fade>
             </div>
-            <Fade className=" lg:w-5/12 w-10/12">
-                <img src="/images/maskot-wave.png" className="lg:translate-x-24 mx-auto" width={700} alt="Maskot Baksara Waving" />
+            <Fade className="xl:w-5/12 lg:w-5/12 w-10/12">
+                <img src="/images/maskot-wave.png" className="xl:translate-x-24 mx-auto " width={700} alt="Maskot Baksara Waving" />
             </Fade>
         </div>
         <div className="lg:-translate-y-1/3 lg:mt-0 mt-12">
