@@ -54,6 +54,11 @@ const AppRoutes = () => {
                         path={ROUTES.INTERNAL.EDIT_NEWS}
                         element={<EditNews />}
                     />
+
+                    <Route
+                        path={ROUTES.INTERNAL.LANDING}
+                        element={<LoginPage />}
+                    />
                 </Route>
 
                 {/* Internal Routes */}

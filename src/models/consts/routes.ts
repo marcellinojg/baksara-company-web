@@ -9,6 +9,7 @@ export const ROUTES = {
         LOGIN: '/sign-in'
     },
     INTERNAL: {
+        LANDING: '/internal/',
         DASHBOARD: '/internal/dashboard',
         CREATE_NEWS: '/internal/news/create',
         EDIT_NEWS: '/internal/news/:id/edit',
