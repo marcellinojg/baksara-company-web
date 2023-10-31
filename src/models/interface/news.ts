@@ -5,7 +5,7 @@ interface NewsModel {
     title: string
     description: string
     source: string
-    sourceYear: number
+    sourceYear?: number
     link: string
     imgFile?: FileList
 }

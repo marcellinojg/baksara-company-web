@@ -2,10 +2,11 @@ import { SubmitHandler, UseFormReturn } from "react-hook-form";
 import NewsModel from "../../models/interface/news";
 import useTranslation from "../../hooks/useTranslation";
 import { PrimaryButton } from "../common/Button";
+import formatDate from "../../utils/formatDate";
 
 
 const FormNews = (props: FormNewsProps) => {
-    const { form, onSubmit } = props
+    const { form, onSubmit, title, description, date, source, sourceYear, link } = props
     const { register, handleSubmit, formState: { errors } } = form
     const { translate } = useTranslation()
 
@@ -15,6 +16,7 @@ const FormNews = (props: FormNewsProps) => {
             <input
                 type="text"
                 id="title"
+                defaultValue={title}
                 placeholder={translate('Masukkan judul berita')}
                 className="w-full border-2 border-primary dark:border-none text-primary rounded p-1.5"
                 {...register('title', {
@@ -27,6 +29,7 @@ const FormNews = (props: FormNewsProps) => {
             <label htmlFor="description" className="font-semibold">{translate('Deskripsi Berita')} <span className="text-red-500 text-sm">*</span></label>
             <textarea
                 id="description"
+                defaultValue={description}
                 rows={10}
                 placeholder={translate('Masukkan Deskripsi Berita')}
                 className="w-full border-2 border-primary dark:border-none text-primary rounded p-1.5 resize-none"
@@ -41,6 +44,7 @@ const FormNews = (props: FormNewsProps) => {
             <input
                 type="text"
                 id="source"
+                defaultValue={source}
                 placeholder={translate('Masukkan Sumber Berita')}
                 className="w-full border-2 border-primary dark:border-none text-primary rounded p-1.5"
                 {...register('source', {
@@ -50,10 +54,25 @@ const FormNews = (props: FormNewsProps) => {
             <span className="text-red-500 dark:text-red-300 font-semibold text-sm mt-0.5">{translate(errors.source?.message!)}</span>
         </div>
         <div className="flex flex-col gap-1 mx-auto">
+            <label htmlFor="link" className="font-semibold">{translate('Link Berita')} <span className="text-red-500 text-sm">*</span></label>
+            <input
+                type="text"
+                id="link"
+                defaultValue={link}
+                placeholder={translate('Masukkan Link Berita')}
+                className="w-full border-2 border-primary dark:border-none text-primary rounded p-1.5"
+                {...register('link', {
+                    required: 'Link Berita harus diisi'
+                })}
+            />
+            <span className="text-red-500 dark:text-red-300 font-semibold text-sm mt-0.5">{translate(errors.source?.message!)}</span>
+        </div>
+        <div className="flex flex-col gap-1 mx-auto">
             <label htmlFor="sourceYear" className="font-semibold">{translate('Tahun')} <span className="text-red-500 text-sm">*</span></label>
             <input
                 type="number"
                 id="sourceYear"
+                defaultValue={sourceYear}
                 placeholder={translate('Masukkan Tahun')}
                 className="w-full border-2 border-primary dark:border-none text-primary rounded p-1.5"
                 {...register('sourceYear', {
@@ -67,6 +86,7 @@ const FormNews = (props: FormNewsProps) => {
             <input
                 type="date"
                 id="date"
+                value={formatDate(date, 'id-ID', true)}
                 placeholder={translate('Masukkan Tanggal')}
                 className="w-full border-2 border-primary dark:border-none text-primary rounded p-1.5"
                 {...register('date', {

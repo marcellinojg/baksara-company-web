@@ -9,6 +9,7 @@ import ScrollToTop from "./utils/scrollToTop";
 import LoginPage from "./pages/external/Login";
 import DashboardPage from "./pages/internal/Dashboard";
 import CreateNews from "./pages/internal/CreateNews";
+import EditNews from "./pages/internal/EditNews";
 
 
 const AppRoutes = () => {
@@ -47,6 +48,11 @@ const AppRoutes = () => {
                     <Route
                         path={ROUTES.INTERNAL.CREATE_NEWS}
                         element={<CreateNews />}
+                    />
+
+                    <Route
+                        path={ROUTES.INTERNAL.EDIT_NEWS}
+                        element={<EditNews />}
                     />
                 </Route>
 
