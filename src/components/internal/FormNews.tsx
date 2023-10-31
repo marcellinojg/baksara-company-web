@@ -86,7 +86,7 @@ const FormNews = (props: FormNewsProps) => {
             <input
                 type="date"
                 id="date"
-                value={formatDate(date, 'id-ID', true)}
+                defaultValue={formatDate(date, 'id-ID', true)}
                 placeholder={translate('Masukkan Tanggal')}
                 className="w-full border-2 border-primary dark:border-none text-primary rounded p-1.5"
                 {...register('date', {
