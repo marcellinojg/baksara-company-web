@@ -19,6 +19,9 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
         <header className="w-full">
             <Navbar setShowSidebar={setShowSidebar} />
             <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+
+        </header>
+        <main className={`min-w-screen min-h-screen relative`}>
             {showBanner === true &&
                 <div className="top-[75px] py-1.5 text-sm text-center flex items-end justify-center bg-primary-light dark:bg-primary-dark transition duration-300 absolute w-full text-white">
                     <p className="lg:pt-0">
@@ -27,8 +30,6 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
                     </p>
                 </div>
             }
-        </header>
-        <main className={`min-w-screen min-h-screen relative`}>
             {children}
         </main>
         <footer className="w-full">
