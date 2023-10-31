@@ -7,5 +7,6 @@ interface NewsModel {
     source: string
     sourceYear: number
     link: string
+    imgFile?: FileList
 }
 export default NewsModel

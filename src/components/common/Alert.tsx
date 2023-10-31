@@ -44,7 +44,7 @@ function Alert(props: AlertProps) {
     }, [])
 
     return <>
-        {isActive && <div style={{ position: 'relative', zIndex: '1500' }} className={`bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] border-b-4 gap-3 flex flex-col  p-4 min-w-[25vw] w-full  rounded-md transition-all ${borderColor}`}>
+        {isActive && <div className={`bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] border-b-4 gap-3 flex flex-col  p-4 min-w-[25vw] w-full  rounded-md transition-all ${borderColor}`}>
             <div className="flex items-center justify-between gap-4 w-full ">
                 {iconElement}
                 <p className="text-lg break-words font-bold grow">{title}</p>

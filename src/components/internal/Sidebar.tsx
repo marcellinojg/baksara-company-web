@@ -35,7 +35,7 @@ const Sidebar = (props: SidebarProps) => {
                     to={ROUTES.INTERNAL.DASHBOARD}
                 />
                 <SidebarItem
-                    label="News"
+                    label="Buat News"
                     Icon={FaNewspaper}
                     to={ROUTES.INTERNAL.CREATE_NEWS}
                 />

@@ -27,7 +27,7 @@ export const AlertProvider = ({ children }: { children: ReactNode }) => {
     }
 
     return <AlertContext.Provider value={{ addAlert, clearAlert }}>
-        <div className='fixed bottom-6 lg:right-4 right-[5vw]  flex flex-col gap-2 lg:min-w-[30vw] lg:max-w-[60vw] min-w-[50vw] max-w-[100vw] w-[90vw]  '>
+        <div className='fixed bottom-6 lg:right-4 right-[5vw] z-30  flex flex-col gap-2 lg:min-w-[30vw] lg:max-w-[60vw] min-w-[50vw] max-w-[100vw] w-[90vw]  '>
             {alerts}
         </div>
         {children}
