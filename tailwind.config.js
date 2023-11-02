@@ -12,6 +12,9 @@ export default {
         primary: "#4C3B28",
         "baksara-gray": "#A3A3A3",
       },
+      transitionProperty: {
+        width: "width",
+      },
     },
   },
   plugins: [],

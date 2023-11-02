@@ -5,6 +5,7 @@ import * as FooterFragments from '../../components/common/FooterFragments'
 import useTranslation from "../../hooks/useTranslation"
 import { FaEnvelope, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa"
 import DownloadAppLink from "../../components/common/DownloadAppLink"
+import { ScrollTopButton } from "../../components/common/Button"
 
 const ExternalLayout = (props: ExternalLayoutProps) => {
     const { children, showBanner = false, title = 'Baksara Indonesia', showFooter = true } = props
@@ -80,7 +81,7 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
                     </div>
                 </>
             }
-
+            <ScrollTopButton/>
         </footer>
     </>
 }

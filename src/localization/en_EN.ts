@@ -24,6 +24,7 @@ const en_EN: Record<string, string> = {
     'Masukkan kata sandi anda' : 'Please enter your password',
     'Nama pengguna harus diisi' : 'Username is required',
     'Kata sandi harus diisi' : 'Password is required',
+    'Kembali ke Atas' : 'Return to the Top',
 }
 
 export default en_EN
