@@ -38,12 +38,14 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
                 <>
                     <FooterFragments.FooterDownload />
                     <div className="bg-navbar-light dark:bg-none dark:bg-primary-light relative overflow-hidden">
-                        <img className="select-none absolute opacity-5 rotate-12 lg:-bottom-24 -top-12 lg:left-24 hidden dark:block" src="/images/main-pattern-light.png" width={600} alt="Main Pattern"></img>
-                        <img className="select-none absolute opacity-5 rotate-12 lg:-bottom-24 -top-12 lg:left-24 block dark:hidden" src="/images/main-pattern-dark.png" width={600} alt="Main Pattern"></img>
-                        <div className="flex lg:flex-row flex-col justify-center items-stretch lg:px-[10vw] px-[5vw] py-[5vh]">
+                        <div className="flex lg:flex-row flex-col justify-center items-stretch lg:px-[10vw] px-[5vw] py-[5vh] overflow-hidden">
                             <div className="lg:w-8/12 w-full flex flex-col pr-[10%]">
                                 <img src="/images/logo-wide-dark.png" width={250} className="select-none block dark:hidden" alt="Logo Baksara Wide" />
                                 <img src="/images/logo-wide-light.png" width={250} className="select-none hidden dark:block" alt="Logo Baksara Wide" />
+                                <img className="select-none absolute opacity-5 rotate-45 -top-28 lg:-right-28 hidden lg:dark:block" src="/images/secondary-pattern-light.png" width={300} alt="Main Pattern"></img>
+                                <img className="select-none absolute opacity-5 rotate-45 -top-28 lg:-right-28 lg:block dark:hidden hidden" src="/images/secondary-pattern-dark.png" width={300} alt="Main Pattern"></img>
+                                <img className="select-none absolute opacity-5 rotate-45 -top-28 lg:-left-28 hidden lg:dark:block" src="/images/secondary-pattern-light.png" width={300} alt="Main Pattern"></img>
+                                <img className="select-none absolute opacity-5 rotate-45 -top-28 lg:-left-28 lg:block dark:hidden hidden" src="/images/secondary-pattern-dark.png" width={300} alt="Main Pattern"></img>
                                 <p className="text-black dark:text-white">
                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                                     Animi totam molestiae repellat possimus ratione ipsam reprehenderit consequuntur repellendus fuga,
@@ -81,7 +83,7 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
                     </div>
                 </>
             }
-            <ScrollTopButton/>
+            <ScrollTopButton />
         </footer>
     </>
 }
