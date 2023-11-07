@@ -28,6 +28,10 @@ const AppRoutes = () => {
                         element={<AboutUsPage />}
                     />
                     <Route
+                        path={ROUTES.EXTERNAL.ABOUT_US_WITH_SECTION}
+                        element={<AboutUsPage />}
+                    />
+                    <Route
                         path={ROUTES.EXTERNAL.NEWS}
                         element={<NewsPage />}
                     />

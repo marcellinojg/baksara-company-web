@@ -5,6 +5,7 @@ import { DarkModeButton, LanguageButton, PrimaryButton } from "./Button"
 import { HiOutlineBars3 } from 'react-icons/hi2'
 import { Dispatch, SetStateAction } from "react"
 import useTranslation from "../../hooks/useTranslation"
+import scrollToTarget from "../../utils/scrollOffset"
 
 const Navbar = (props: NavbarProps) => {
     const { setShowSidebar } = props
@@ -20,17 +21,18 @@ const Navbar = (props: NavbarProps) => {
 
             {/* Primary Navbar */}
             <div className="items-center gap-6 grow lg:flex hidden dark:text-white text-primary font-semibold">
-                <Link to={ROUTES.EXTERNAL.LANDING}>{translate('Beranda')}</Link>
-                <Link to={ROUTES.EXTERNAL.ABOUT_US}>{translate('Tentang Kami')}</Link>
-                <Link to={ROUTES.EXTERNAL.NEWS}>{translate('Berita')}</Link>
-                <Link to={ROUTES.EXTERNAL.FAQ}>{translate('FAQ')}</Link>
+                <Link to={ROUTES.EXTERNAL.LANDING} onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}> {translate('Beranda')}</Link>
+                <Link to={ROUTES.EXTERNAL.ABOUT_US} onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}>{translate('Tentang Kami')}</Link>
+                <Link to={ROUTES.EXTERNAL.ABOUT_US} state={{ section: 'features' }} onClick={() => scrollToTarget(document.querySelector('#features'), 70)}>{translate('Fitur Kami')}</Link>
+                <Link to={ROUTES.EXTERNAL.NEWS} onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}>{translate('Berita')}</Link>
+                <Link to={ROUTES.EXTERNAL.FAQ} onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}>{translate('FAQ')}</Link>
             </div>
 
             {/* Secondary Navbar */}
             <div className="items-center gap-3 lg:flex hidden">
                 <DarkModeButton />
                 <LanguageButton />
-            <Link to={ROUTES.EXTERNAL.LOGIN}>
+                <Link to={ROUTES.EXTERNAL.LOGIN}>
                     <PrimaryButton className="flex items-center justify-center gap-2 rounded py-2 px-5 font-bold floating-shadow-md">
                         <FaSignInAlt />
                         {translate('Masuk')}

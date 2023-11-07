@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useRef } from "react"
+import { Dispatch, MouseEventHandler, SetStateAction, useEffect, useRef } from "react"
 import useOutsideAlerter from "../../hooks/useOutsideAlerter"
 import useTranslation from "../../hooks/useTranslation"
 import { DarkModeButton, LanguageButton, PrimaryButton, SecondaryButton } from "./Button"
@@ -8,6 +8,7 @@ import { FaDownload, FaHome, FaQuestionCircle, FaSignInAlt, FaUsers } from "reac
 import { Link } from "react-router-dom"
 import { HiNewspaper } from "react-icons/hi2"
 import scrollToTarget from "../../utils/scrollOffset"
+import { TbHeartHandshake } from 'react-icons/tb'
 
 
 const Sidebar = (props: SidebarProps) => {
@@ -15,10 +16,6 @@ const Sidebar = (props: SidebarProps) => {
     const { translate } = useTranslation()
     const sidebarRef = useRef(null)
     useOutsideAlerter(sidebarRef, () => setShowSidebar(false))
-
-    useEffect(() => {
-        console.log(showSidebar)
-    }, [showSidebar])
 
     const handleScrollDownload = () => {
         scrollToTarget(document.querySelector('#downloadApp')!)
@@ -33,6 +30,7 @@ const Sidebar = (props: SidebarProps) => {
             <div className="grow max-w-full max-h-full overflow-auto">
                 <SidebarItem to={ROUTES.EXTERNAL.LANDING} label={translate('Beranda')} Icon={FaHome} />
                 <SidebarItem to={ROUTES.EXTERNAL.ABOUT_US} label={translate('Tentang Kami')} Icon={FaUsers} />
+                <SidebarItem to={ROUTES.EXTERNAL.FEATURES} label={translate('Fitur Kami')} Icon={TbHeartHandshake} state={{ section: 'features' }} onClick={() => scrollToTarget(document.querySelector('#features'), 70)} />
                 <SidebarItem to={ROUTES.EXTERNAL.NEWS} label={translate('Berita')} Icon={HiNewspaper} />
                 <SidebarItem to={ROUTES.EXTERNAL.FAQ} label={translate('FAQ')} Icon={FaQuestionCircle} />
                 <Link to={ROUTES.EXTERNAL.LOGIN}>
@@ -62,8 +60,8 @@ const Sidebar = (props: SidebarProps) => {
 export default Sidebar
 
 const SidebarItem = (props: SidebarItemProps) => {
-    const { to, label, Icon } = props
-    return <Link to={to} className="flex items-center gap-3 text-lg border-b-[1px] border-gray-300 px-3 py-5">
+    const { to, label, Icon, state, onClick } = props
+    return <Link state={state} onClick={onClick} to={to} className="flex items-center gap-3 text-lg border-b-[1px] border-gray-300 px-3 py-4">
         <Icon />
         <span>{label}</span>
     </Link>
@@ -79,4 +77,6 @@ interface SidebarItemProps {
     to: string
     label: string
     Icon: IconType
+    state?: any
+    onClick?: MouseEventHandler
 }

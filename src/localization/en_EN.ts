@@ -3,6 +3,7 @@ const en_EN: Record<string, string> = {
     'Selamat Datang!': "Welcome!",
     'Beranda': 'Home',
     'Tentang Kami': 'About Us',
+    'Fitur Kami' : 'Our Features',
     'Berita': 'News',
     'Masuk': 'Sign In',
     'Unduh Aplikasi': 'Download App',
@@ -25,6 +26,7 @@ const en_EN: Record<string, string> = {
     'Nama pengguna harus diisi' : 'Username is required',
     'Kata sandi harus diisi' : 'Password is required',
     'Kembali ke Atas' : 'Return to the Top',
+    'Selengkapnya' : 'Learn More'
 }
 
 export default en_EN

@@ -3,10 +3,12 @@
 export const ROUTES = {
     EXTERNAL: {
         LANDING: '/',
+        ABOUT_US_WITH_SECTION: '/about-us/:section',
         ABOUT_US: '/about-us',
         FAQ: '/faq',
         NEWS: '/news',
-        LOGIN: '/sign-in'
+        LOGIN: '/sign-in',
+        FEATURES: '/about-us/features'
     },
     INTERNAL: {
         LANDING: '/internal/',
@@ -21,7 +23,6 @@ export const ROUTES = {
 
 export const DYNAMIC_ROUTES = {
     EXTERNAL: {
-
     },
     INTERNAL: {
         EDIT_NEWS: (id: string) => `/internal/news/${id}/edit`,

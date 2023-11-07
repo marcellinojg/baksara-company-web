@@ -3,10 +3,30 @@ import ExternalLayout from "../layouts/ExternalLayout"
 import useTranslation from "../../hooks/useTranslation"
 import { AvatarMainTeam, AvatarTeam } from "../../components/common/AvatarTeam"
 import SupportedBy from "../../components/common/SupportedByBanner"
+import { useLocation, useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
+import scrollToTarget from "../../utils/scrollOffset"
+import FeatureCard from "../../components/common/FeatureCard"
+import { FeatureModal } from "../../components/internal/Modal"
 
 
 const AboutUsPage = () => {
     const { translate } = useTranslation()
+    const { state } = useLocation()
+
+    const [featureTitle, setFeatureTitle] = useState<string>('')
+    const [featureDescription, setFeatureDescription] = useState<string>('')
+    const [isModalActive, setIsModalActive] = useState<boolean>(false)
+
+
+    useEffect(() => {
+        if (state) {
+            const element = document.querySelector(`#${state.section}`)
+            if (element) scrollToTarget(element, 70)
+        }
+    }, [state])
+
+
     return <ExternalLayout title={translate('Baksara Indonesia | Tentang Kami')}>
         {/* Section 1 About Us */}
         <div className="min-w-screen min-h-[100dvh] flex items-center justify-center pb-12">
@@ -43,6 +63,59 @@ const AboutUsPage = () => {
                 <Fade>
                     <img src="/images/maskot-stand-cropped.png" width={150} className="lg:w-auto lg:h-[60vh]" alt="Maskot Baksara Standing" />
                 </Fade>
+            </div>
+        </div>
+        {/* Features */}
+        <div id="features" className="min-w-screen flex flex-col items-center justify-start text-primary dark:text-white pt-20  pb-16 transition duration-300">
+            <Fade direction="up">
+                <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl">{translate('Fitur Kami')}</h1>
+            </Fade>
+            <div className="flex flex-wrap items-stretch justify-center gap-12 gap-y-24 mt-24">
+                <FeatureCard
+                    setTitle={setFeatureTitle}
+                    setDescription={setFeatureDescription}
+                    setIsModalActive={setIsModalActive}
+                    title={'Lorem, ipsum. 1'}
+                    subtitle="Lorem, ipsum dolor sit amet."
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo beatae porro, animi sed soluta saepe accusamus non atque sapiente?'}
+                    iconLink="/images/maskot-wave.png"
+                />
+                <FeatureCard
+                    setTitle={setFeatureTitle}
+                    setDescription={setFeatureDescription}
+                    setIsModalActive={setIsModalActive}
+                    title={'Lorem, ipsum. 2'}
+                    subtitle="Lorem, ipsum dolor sit amet."
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo beatae porro, animi sed soluta saepe accusamus non atque sapiente?'}
+                    iconLink="/images/maskot-wave.png"
+                />
+                <FeatureCard
+                    setTitle={setFeatureTitle}
+                    setDescription={setFeatureDescription}
+                    setIsModalActive={setIsModalActive}
+                    title={'Lorem, ipsum. 3'}
+                    subtitle="Lorem, ipsum dolor sit amet."
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo beatae porro, animi sed soluta saepe accusamus non atque sapiente?'}
+                    iconLink="/images/maskot-wave.png"
+                />
+                <FeatureCard
+                    setTitle={setFeatureTitle}
+                    setDescription={setFeatureDescription}
+                    setIsModalActive={setIsModalActive}
+                    title={'Lorem, ipsum. 4'}
+                    subtitle="Lorem, ipsum dolor sit amet."
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo beatae porro, animi sed soluta saepe accusamus non atque sapiente?'}
+                    iconLink="/images/maskot-wave.png"
+                />
+                <FeatureCard
+                    setTitle={setFeatureTitle}
+                    setDescription={setFeatureDescription}
+                    setIsModalActive={setIsModalActive}
+                    title={'Lorem, ipsum. 5'}
+                    subtitle="Lorem, ipsum dolor sit amet."
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo beatae porro, animi sed soluta saepe accusamus non atque sapiente?'}
+                    iconLink="/images/maskot-wave.png"
+                />
             </div>
         </div>
         {/* Meet our team */}
@@ -102,7 +175,11 @@ const AboutUsPage = () => {
         </div>
 
         <SupportedBy />
+        {isModalActive === true &&
+            <FeatureModal title={featureTitle} description={featureDescription} onClose={() => setIsModalActive(false)} />
+        }
     </ExternalLayout>
 }
+
 
 export default AboutUsPage

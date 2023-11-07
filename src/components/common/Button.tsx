@@ -71,7 +71,6 @@ export const ScrollTopButton = () => {
 
     useEffect(() => {
         const handleShowButton = () => {
-            console.log(window.scrollY)
             if (window.scrollY > 500)
                 setIsActive(true)
             else
