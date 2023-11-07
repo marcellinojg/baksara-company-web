@@ -1,4 +1,4 @@
-import { Dispatch, MouseEventHandler, SetStateAction, useEffect, useRef } from "react"
+import { Dispatch, MouseEventHandler, SetStateAction, useRef } from "react"
 import useOutsideAlerter from "../../hooks/useOutsideAlerter"
 import useTranslation from "../../hooks/useTranslation"
 import { DarkModeButton, LanguageButton, PrimaryButton, SecondaryButton } from "./Button"

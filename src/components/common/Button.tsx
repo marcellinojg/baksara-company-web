@@ -2,7 +2,7 @@ import { MouseEventHandler, ReactNode, useEffect, useState } from "react"
 import useTranslation from "../../hooks/useTranslation"
 import ReactCountryFlag from "react-country-flag"
 import useTheme from "../../hooks/useTheme"
-import { FaArrowAltCircleUp, FaArrowUp, FaMoon, FaSun } from "react-icons/fa"
+import { FaArrowUp, FaMoon, FaSun } from "react-icons/fa"
 import { Fade } from "react-awesome-reveal"
 
 
