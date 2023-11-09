@@ -54,12 +54,12 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
                                     Perspiciatis consectetur, repudiandae rerum rem ab cum! [7]
                                 </p>
                                 <span className="font-bold text-xl text-primary dark:text-white mt-6 mb-2.5">
-                                    {translate('Unduh Sekarang !')}
+                                    {translate('Unduh Sekarang !')}[22]
                                 </span>
                                 <DownloadAppLink />
                             </div>
                             <div className="lg:w-4/12 w-full flex flex-col ">
-                                <b className="text-2xl text-primary dark:text-white mb-4 mt-8">{translate('Hubungi Kami')}</b>
+                                <b className="text-2xl text-primary dark:text-white mb-4 mt-8">{translate('Hubungi Kami')}[21]</b>
                                 <div className="flex flex-col gap-2">
                                     <FooterFragments.FooterSocialLink Icon={FaEnvelope} label="admin@baksara.id" to="https://www.instagram.com" />
                                     <FooterFragments.FooterSocialLink Icon={FaInstagram} label="@baksara.id" to="https://www.instagram.com" />

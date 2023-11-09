@@ -17,15 +17,15 @@ const LandingPage = () => {
         <div className="w-full min-h-[100dvh] flex lg:flex-row flex-col-reverse items-center justify-center lg:pt-0 pt-[150px]">
             {/* <img src="/images/ternary-pattern-dark.png" width={200} className="absolute select-none block dark:hidden opacity-[0.03] lg:h-[150vh] top-14 w-auto lg:rotate-12" alt="" /> */}
             {/* <img src="/images/ternary-pattern-light.png" width={200} className="absolute select-none hidden dark:block opacity-[0.05] lg:h-[150vh] top-14 w-auto lg:rotate-12" alt="" /> */}
-            <div className="xl:w-4/12 lg:w-6/12 w-10/12 flex flex-col lg:gap-8 gap-6 xl:translate-x-0 lg:translate-x-24">
+            <div className="xl:w-4/12 lg:w-6/12 w-10/12 flex flex-col gap-6 xl:translate-x-0 lg:translate-x-24">
                 <Fade>
-                    <p className="font-family-secondary self-start font-bold">
-                        <span className="highlight lg:text-[5vh] md:text-4xl text-[8vw] relative text-primary dark:text-primary-dark">Lorem, ipsum dolor. [1]</span>
+                    <p className="font-family-secondary self-start font-bold mt-6">
+                        <span className="highlight xl:text-6xl text-4xl relative text-primary dark:text-primary-dark">{translate('Sugeng Rawuh')}</span>
                         <br />
-                        <span className="text-primary-lighter lg:text-[4vh] md:text-3xl text-2xl dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, incidunt. [2]</span>
+                        <span className="text-primary-lighter xl:text-5xl text-3xl tracking-wider dark:text-white">{translate('Pamawas Basa Jawa Minangka Budaya Kita')}</span>
                     </p>
-                    <p className="md:text-xl text-black dark:text-white">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est voluptatem explicabo cupiditate quasi tenetur dicta praesentium, perferendis harum fugit dignissimos magnam in voluptatum fugiat voluptatibus libero doloribus dolorum et ipsum! [3]
+                    <p className="xl:text-xl md:text-lg text-black dark:text-white">
+                        {translate('Basa Jawa ora bakal luntur dening jaman merga ing kene kita wis siyap nguri-uri bebarengan karo')} <b>BAKSARA</b>.
                     </p>
                     <PrimaryButton
                         onClick={() => window.open("https://www.instagram.com", '_blank')}
@@ -90,7 +90,7 @@ const LandingPage = () => {
         </div>
         <div className="min-w-screen flex flex-col items-center justify-start text-primary dark:text-white pt-28 transition duration-300">
             <Fade direction="up">
-                <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl text-center">{translate('Apa Kata Orang Tentang Baksara')}</h1>
+                <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl text-center">{translate('Apa Kata Orang Tentang Baksara')}[19]</h1>
             </Fade>
             <div className="w-10/12 mt-12">
                 <Swiper

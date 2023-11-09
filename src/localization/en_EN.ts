@@ -26,7 +26,10 @@ const en_EN: Record<string, string> = {
     'Nama pengguna harus diisi' : 'Username is required',
     'Kata sandi harus diisi' : 'Password is required',
     'Kembali ke Atas' : 'Return to the Top',
-    'Selengkapnya' : 'Learn More'
+    'Selengkapnya' : 'Learn More',
+    'Sugeng Rawuh' : 'Welcome',
+    'Pamawas Basa Jawa Minangka Budaya Kita': 'Observer of Javanese language as our culture',
+    'Basa Jawa ora bakal luntur dening jaman merga ing kene kita wis siyap nguri-uri bebarengan karo' : 'The Javanese language will not be eroded by time because we are here, who are ready to preserve it together with'
 }
 
 export default en_EN
