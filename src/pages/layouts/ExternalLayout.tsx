@@ -50,7 +50,7 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
                                     {translate('Baksara: Menghadirkan budaya Jawa melalui pembelajaran bahasa Jawa. Kami berkomitmen untuk melestarikan warisan budaya ini dan membantu Anda belajar bahasa Jawa dengan lebih mudah dan menyenangkan. Ayo bersama-sama menjaga dan merayakan kekayaan bahasa Jawa')}
                                 </p>
                                 <span className="font-bold text-xl text-primary dark:text-white mt-6 mb-2.5">
-                                    {translate('Unduh Sekarang!')}[22]
+                                    {translate('Unduh Sekarang!')}
                                 </span>
                                 <DownloadAppLink />
                             </div>

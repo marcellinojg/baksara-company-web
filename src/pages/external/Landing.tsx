@@ -90,7 +90,7 @@ const LandingPage = () => {
         </div>
         <div className="min-w-screen flex flex-col items-center justify-start text-primary dark:text-white pt-28 transition duration-300">
             <Fade direction="up">
-                <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl text-center">{translate('Kata mereka tentang Baksara')}</h1>
+                <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl text-center mx-6">{translate('Kata mereka tentang Baksara')}</h1>
             </Fade>
             <div className="w-10/12 mt-12">
                 <Swiper
