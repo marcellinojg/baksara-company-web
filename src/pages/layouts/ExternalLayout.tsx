@@ -26,8 +26,8 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
             {showBanner === true &&
                 <div className="top-[75px] py-1.5 text-sm text-center flex items-end justify-center bg-primary-light dark:bg-primary-dark transition duration-300 absolute w-full text-white">
                     <p className="lg:pt-0">
-                        Lorem ipsum dolor sit amet consectetur ! [4] <br className="md:hidden block" />
-                        <a href="https://www.google.com" target="_blank" className="font-bold ml-2 underline">Lorem, ipsum. → [5]</a>
+                        { translate('Tuliskan cerita anda menggunakan aksara jawa!')} <br className="md:hidden block" />
+                        <a href="https://www.google.com" target="_blank" className="font-bold ml-2 underline">{translate('Kunjungi Baksara Translate!')} →</a>
                     </p>
                 </div>
             }
@@ -47,19 +47,15 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
                                 <img className="select-none absolute opacity-5 rotate-45 -top-28 lg:-left-28 hidden lg:dark:block" src="/images/secondary-pattern-light.png" width={300} alt="Main Pattern"></img>
                                 <img className="select-none absolute opacity-5 rotate-45 -top-28 lg:-left-28 lg:block dark:hidden hidden" src="/images/secondary-pattern-dark.png" width={300} alt="Main Pattern"></img>
                                 <p className="text-black dark:text-white">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                    Animi totam molestiae repellat possimus ratione ipsam reprehenderit consequuntur repellendus fuga,
-                                    placeat distinctio hic provident qui, soluta iste,
-                                    quisquam eaque quaerat velit aliquid suscipit saepe.
-                                    Perspiciatis consectetur, repudiandae rerum rem ab cum! [7]
+                                    {translate('Baksara: Menghadirkan budaya Jawa melalui pembelajaran bahasa Jawa. Kami berkomitmen untuk melestarikan warisan budaya ini dan membantu Anda belajar bahasa Jawa dengan lebih mudah dan menyenangkan. Ayo bersama-sama menjaga dan merayakan kekayaan bahasa Jawa')}
                                 </p>
                                 <span className="font-bold text-xl text-primary dark:text-white mt-6 mb-2.5">
-                                    {translate('Unduh Sekarang !')}[22]
+                                    {translate('Unduh Sekarang!')}[22]
                                 </span>
                                 <DownloadAppLink />
                             </div>
                             <div className="lg:w-4/12 w-full flex flex-col ">
-                                <b className="text-2xl text-primary dark:text-white mb-4 mt-8">{translate('Hubungi Kami')}[21]</b>
+                                <b className="text-2xl text-primary dark:text-white mb-4 mt-8">{translate('Get in touch with us')}</b>
                                 <div className="flex flex-col gap-2">
                                     <FooterFragments.FooterSocialLink Icon={FaEnvelope} label="admin@baksara.id" to="https://www.instagram.com" />
                                     <FooterFragments.FooterSocialLink Icon={FaInstagram} label="@baksara.id" to="https://www.instagram.com" />

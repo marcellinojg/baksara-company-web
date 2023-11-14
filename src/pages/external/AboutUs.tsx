@@ -36,9 +36,9 @@ const AboutUsPage = () => {
                 </Fade>
                 <div className="pl-[5vw] flex flex-col gap-5 lg:pt-0 pt-12">
                     <Fade cascade damping={0.5}>
-                        <h1 className="font-bold font-family-secondary lg:text-6xl text-3xl text-primary dark:text-white transition duration-300">Lorem, ipsum dolor. [8]</h1>
-                        <h2 className="font-semibold lg:text-3xl text-xl text-primary dark:text-white transition duration-300">Lorem ipsum dolor sit amet. [9]</h2>
-                        <p className="lg:text-xl text-lg text-primary dark:text-white transition duration-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, veniam. [10]</p>
+                        <h1 className="font-bold font-family-secondary lg:text-6xl text-3xl text-primary dark:text-white transition duration-300">{translate('Halo Bolo-Bolo')}</h1>
+                        <h2 className="font-semibold lg:text-3xl text-xl text-primary dark:text-white transition duration-300">{translate('Nepangaken, jenengku Bakbolbot.')}</h2>
+                        <p className="lg:text-xl text-lg text-primary dark:text-white transition duration-300">{translate('Mari menjelajahi Baksara bersamaku!')}</p>
                     </Fade>
                 </div>
             </div>
@@ -49,14 +49,14 @@ const AboutUsPage = () => {
             <div className="w-full flex lg:flex-row flex-col-reverse items-center justify-center gap-4 py-12">
                 <div className="lg:w-7/12 w-10/12 text-white lg:pr-[10%]">
                     <Fade cascade damping={0.3}>
-                        <h1 className="font-family-secondary font-bold lg:text-4xl text-2xl">Lorem ipsum dolor sit amet. [11]</h1>
+                        <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl">{translate('Sugeng Rawuh ing Baksara!')}</h1>
                         <br />
                         <p className="lg:text-xl text-justify">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore quis perspiciatis molestiae placeat doloremque adipisci fugit rem sunt neque? Sed cum eius sequi aspernatur saepe. [12]
+                            {translate('Baksara adalah sebuah platform belajar bahasa Jawa yang didedikasikan untuk memperkaya pemahaman Anda tentang budaya Jawa melalui modul, kegiatan, dan latihan. 📚')} 
                         </p>
                         <br />
                         <p className="lg:text-xl text-justify">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, pariatur debitis fugit ea incidunt exercitationem quidem maiores veritatis? Autem, distinctio! [13]
+                            {translate('Kami berfokus pada pengajaran dan penyebaran kekayaan bahasa Jawa dengan menghubungkan antara pembelajar dan budaya Jawa. 🌟')}
                         </p>
                     </Fade>
                 </div>
@@ -144,7 +144,7 @@ const AboutUsPage = () => {
         <div className="min-w-screen min-h-[80dvh]  py-16  bg-primary-light dark:bg-primary-dark overflow-hidden relative mb-16 transition duration-300">
             <div className="flex lg:flex-row w-10/12 flex-col items-center lg:justify-between justify-center mx-auto">
                 <Fade cascade direction="up" damping={0.1}>
-                    <h1 className="lg:text-5xl text-3xl font-family-secondary font-bold text-white transition duration-300">Lorem ipsum dolor sit. [14]</h1>
+                    <h1 className="lg:text-5xl text-3xl font-family-secondary font-bold text-white transition duration-300">{translate('From Bangkit to Baksara, Baksara for Indonesia')}</h1>
                     <div className="flex flex-wrap justify-center items-center gap-12 mt-8">
                         <img src="/images/logo-km.webp" width={120} className="lg:w-[120px] w-16" alt="" />
                         <img src="/images/logo-google.webp" width={120} className="lg:w-[120px] w-16" alt="" />
@@ -166,9 +166,9 @@ const AboutUsPage = () => {
                 <div className="flex lg:flex-row flex-col items-center justify-center w-10/12 mx-auto mt-32 gap-12">
                     <img src="/images/maskot-wave.png" width={360} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
                     <div className="lg:pr-[10%] lg:w-2/3">
-                        <p className="text-white lg:text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus. [15]</p>
+                        <p className="text-white lg:text-xl text-justify">{translate('Sebagai bagian dari hasil program Bangkit 2023, Baksara berhasil meraih posisi top-20 dalam Proyek Capstone berbasis Produk dan menerima dukungan inkubasi dari Google Indonesia serta Dikti Kemdikbudristek. 🏅')}</p>
                         <br />
-                        <p className="text-white lg:text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus. [16]</p>
+                        <p className="text-white lg:text-xl text-justify">{translate('Baksara mendapat dukungan dari Google Indonesia, Direktorat Jenderal Pendidikan Tinggi, Universitas Indonesia, dan Bangkit Academy yang dipimpin oleh Google, Tokopedia, Gojek, & Traveloka.')}</p>
                     </div>
                 </div>
             </Fade>
