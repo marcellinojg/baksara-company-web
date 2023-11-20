@@ -7,7 +7,7 @@ export const ROUTES = {
         ABOUT_US: '/about-us',
         FAQ: '/faq',
         NEWS: '/news',
-        LOGIN: '/sign-in',
+        LOGIN: '/login',
         FEATURES: '/about-us/features'
     },
     INTERNAL: {

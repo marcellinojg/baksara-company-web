@@ -39,11 +39,12 @@ const AppRoutes = () => {
                         path={ROUTES.EXTERNAL.FAQ}
                         element={<FaqPage />}
                     />
+
+                    {/* Temp */}
                     <Route
                         path={ROUTES.EXTERNAL.LOGIN}
                         element={<LoginPage />}
                     />
-                    {/* Temp */}
                     <Route
                         path={ROUTES.INTERNAL.DASHBOARD}
                         element={<DashboardPage />}
@@ -57,11 +58,6 @@ const AppRoutes = () => {
                     <Route
                         path={ROUTES.INTERNAL.EDIT_NEWS}
                         element={<EditNews />}
-                    />
-
-                    <Route
-                        path={ROUTES.INTERNAL.LANDING}
-                        element={<LoginPage />}
                     />
                 </Route>
 
