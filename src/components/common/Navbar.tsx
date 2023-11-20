@@ -1,4 +1,4 @@
-import { FaSignInAlt } from "react-icons/fa"
+import { FaDownload } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import { ROUTES } from "../../models/consts/routes"
 import { DarkModeButton, LanguageButton, PrimaryButton } from "./Button"
@@ -10,6 +10,11 @@ import scrollToTarget from "../../utils/scrollOffset"
 const Navbar = (props: NavbarProps) => {
     const { setShowSidebar } = props
     const { translate } = useTranslation()
+
+    const handleScrollDownload = () => {
+        scrollToTarget(document.querySelector('#downloadApp')!)
+        setShowSidebar(false)
+    }
 
     return <nav className="fixed w-full top-0 h-[75px] z-10 bg-navbar-light dark:bg-none dark:bg-primary-light transition duration-300">
         <div className="flex justify-between items-center lg:px-[12.5vw] md:px-[8vw] px-[7.5vw] h-full gap-[2vw]">
@@ -32,12 +37,10 @@ const Navbar = (props: NavbarProps) => {
             <div className="items-center gap-3 lg:flex hidden">
                 <DarkModeButton />
                 <LanguageButton />
-                <Link to={ROUTES.EXTERNAL.LOGIN}>
-                    <PrimaryButton className="flex items-center justify-center gap-2 rounded py-2 px-5 font-bold floating-shadow-md">
-                        <FaSignInAlt />
-                        {translate('Masuk')}
-                    </PrimaryButton>
-                </Link>
+                <PrimaryButton onClick={handleScrollDownload} className="flex items-center justify-center gap-2 rounded py-2 px-5 font-bold floating-shadow-md">
+                    <FaDownload />
+                    {translate('Unduh Aplikasi')}
+                </PrimaryButton>
             </div>
             <button className="text-3xl lg:hidden block text-primary dark:text-white" type="button" onClick={() => setShowSidebar(true)}>
                 <HiOutlineBars3 />

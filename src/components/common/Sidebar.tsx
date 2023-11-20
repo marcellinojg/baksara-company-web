@@ -1,10 +1,10 @@
 import { Dispatch, MouseEventHandler, SetStateAction, useRef } from "react"
 import useOutsideAlerter from "../../hooks/useOutsideAlerter"
 import useTranslation from "../../hooks/useTranslation"
-import { DarkModeButton, LanguageButton, PrimaryButton, SecondaryButton } from "./Button"
+import { DarkModeButton, LanguageButton, PrimaryButton } from "./Button"
 import { IconType } from "react-icons"
 import { ROUTES } from "../../models/consts/routes"
-import { FaDownload, FaHome, FaQuestionCircle, FaSignInAlt, FaUsers } from "react-icons/fa"
+import { FaDownload, FaHome, FaQuestionCircle, FaUsers } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import { HiNewspaper } from "react-icons/hi2"
 import scrollToTarget from "../../utils/scrollOffset"
@@ -33,19 +33,10 @@ const Sidebar = (props: SidebarProps) => {
                 <SidebarItem to={ROUTES.EXTERNAL.FEATURES} label={translate('Fitur Kami')} Icon={TbHeartHandshake} state={{ section: 'features' }} onClick={() => scrollToTarget(document.querySelector('#features'), 70)} />
                 <SidebarItem to={ROUTES.EXTERNAL.NEWS} label={translate('Berita')} Icon={HiNewspaper} />
                 <SidebarItem to={ROUTES.EXTERNAL.FAQ} label={translate('FAQ')} Icon={FaQuestionCircle} />
-                <Link to={ROUTES.EXTERNAL.LOGIN}>
-                    <PrimaryButton className="w-full flex justify-between items-center rounded py-3 px-6 mt-8 mb-4 text-white">
-                        <span className="font-semibold">{translate('Masuk')}</span>
-                        <FaSignInAlt />
-                    </PrimaryButton>
-                </Link>
-                <SecondaryButton
-                    onClick={handleScrollDownload}
-                    className="w-full flex justify-between items-center rounded py-3 px-6 text-primary dark:text-white"
-                >
+                <PrimaryButton onClick={handleScrollDownload} className="w-full flex justify-between items-center rounded py-3 px-6 mt-8 mb-4 text-white">
                     <span className="font-semibold">{translate('Unduh Aplikasi')}</span>
                     <FaDownload />
-                </SecondaryButton>
+                </PrimaryButton>
 
             </div>
             <div className="flex items-center justify-center gap-4">
