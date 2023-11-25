@@ -30,7 +30,7 @@ const DashboardPage = () => {
                         date={new Date().toISOString()}
                         title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quae facilis corporis?"
                         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate commodi, sint tempore quas voluptatum sequi ex facilis! Reiciendis, totam eius et voluptatum nostrum facere, doloremque at illum nesciunt suscipit amet labore eligendi maiores, sed unde?"
-                        source="Baksara Indonesia"
+                        source="Baksara"
                         sourceYear={2023}
                         link={'https://www.google.com'}
                         isAdmin={true}
@@ -40,7 +40,7 @@ const DashboardPage = () => {
                         date={new Date().toISOString()}
                         title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quae facilis corporis?"
                         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate commodi, sint tempore quas voluptatum sequi ex facilis! Reiciendis, totam eius et voluptatum nostrum facere, doloremque at illum nesciunt suscipit amet labore eligendi maiores, sed unde?"
-                        source="Baksara Indonesia"
+                        source="Baksara"
                         sourceYear={2023}
                         link={'https://www.google.com'}
                         isAdmin={true}
@@ -50,7 +50,7 @@ const DashboardPage = () => {
                         date={new Date().toISOString()}
                         title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quae facilis corporis?"
                         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate commodi, sint tempore quas voluptatum sequi ex facilis! Reiciendis, totam eius et voluptatum nostrum facere, doloremque at illum nesciunt suscipit amet labore eligendi maiores, sed unde?"
-                        source="Baksara Indonesia"
+                        source="Baksara"
                         sourceYear={2023}
                         link={'https://www.google.com'}
                         isAdmin={true}
@@ -60,7 +60,7 @@ const DashboardPage = () => {
                         date={new Date().toISOString()}
                         title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quae facilis corporis?"
                         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate commodi, sint tempore quas voluptatum sequi ex facilis! Reiciendis, totam eius et voluptatum nostrum facere, doloremque at illum nesciunt suscipit amet labore eligendi maiores, sed unde?"
-                        source="Baksara Indonesia"
+                        source="Baksara"
                         sourceYear={2023}
                         link={'https://www.google.com'}
                         isAdmin={true}
@@ -70,7 +70,7 @@ const DashboardPage = () => {
                         date={new Date().toISOString()}
                         title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quae facilis corporis?"
                         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate commodi, sint tempore quas voluptatum sequi ex facilis! Reiciendis, totam eius et voluptatum nostrum facere, doloremque at illum nesciunt suscipit amet labore eligendi maiores, sed unde?"
-                        source="Baksara Indonesia"
+                        source="Baksara"
                         sourceYear={2023}
                         link={'https://www.google.com'}
                         isAdmin={true}

@@ -14,7 +14,7 @@ const LoginPage = () => {
         console.log(data)
     }
 
-    return <ExternalLayout showFooter={false} title={translate("Baksara Indonesia | Masuk")}>
+    return <ExternalLayout showFooter={false} title={translate("Baksara | Masuk")}>
         <div className="min-w-screen min-h-screen flex items-center justify-center">
             <form onSubmit={handleSubmit(onSubmit)} className="bg-white dark:bg-primary-light text-primary dark:text-white rounded floating-shadow-md p-8 lg:w-1/3 md:w-1/2 w-10/12">
                 <h1 className="text-center font-family-secondary font-bold lg:text-5xl text-4xl">Sign In</h1>

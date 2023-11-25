@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     ogPlugin({
       basic: {
-        title: 'Baksara Indonesia',
+        title: 'Baksara',
         description: 'Baksara Adalah 123',
         image: {
           url: 'https://www.baksara.marcellinojg.site/images/app_icon.png',
@@ -20,7 +20,7 @@ export default defineConfig({
       },
       twitter: {
         card: 'summary',
-        title: 'Baksara Indonesia',
+        title: 'Baksara',
         description: 'Baksara Adalah 123',
         image: 'https://www.baksara.marcellinojg.site/images/app_icon.png',
       },

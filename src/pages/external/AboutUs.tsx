@@ -8,6 +8,8 @@ import { useEffect, useState } from "react"
 import scrollToTarget from "../../utils/scrollOffset"
 import FeatureCard from "../../components/common/FeatureCard"
 import { FeatureModal } from "../../components/internal/Modal"
+import teamData from "../../data/team"
+import teamIntiData from "../../data/team_inti"
 
 
 const AboutUsPage = () => {
@@ -27,7 +29,7 @@ const AboutUsPage = () => {
     }, [state])
 
 
-    return <ExternalLayout title={translate('Baksara Indonesia | Tentang Kami')}>
+    return <ExternalLayout title={translate('Baksara | Tentang Kami')}>
         {/* Section 1 About Us */}
         <div className="min-w-screen min-h-[100dvh] flex items-center justify-center pb-12">
             <div className="lg:w-2/3 w-10/12 flex lg:flex-row flex-col items-center justify-center">
@@ -52,7 +54,7 @@ const AboutUsPage = () => {
                         <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl">{translate('Sugeng Rawuh ing Baksara!')}</h1>
                         <br />
                         <p className="lg:text-xl text-justify">
-                            {translate('Baksara adalah sebuah platform belajar bahasa Jawa yang didedikasikan untuk memperkaya pemahaman Anda tentang budaya Jawa melalui modul, kegiatan, dan latihan. 📚')} 
+                            {translate('Baksara adalah sebuah platform belajar bahasa Jawa yang didedikasikan untuk memperkaya pemahaman Anda tentang budaya Jawa melalui modul, kegiatan, dan latihan. 📚')}
                         </p>
                         <br />
                         <p className="lg:text-xl text-justify">
@@ -119,24 +121,15 @@ const AboutUsPage = () => {
             </div>
         </div>
         {/* Meet our team */}
-        <div className="min-w-screen min-h-[100dvh] flex flex-col items-center justify-start text-primary dark:text-white py-16 transition duration-300">
+        <div className="min-w-screen flex flex-col items-center justify-start text-primary dark:text-white py-16 transition duration-300">
             <Fade direction="up">
                 <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl">{translate('Perkenalkan Tim Kami')}</h1>
             </Fade>
-            <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 mt-16 w-10/12 mx-auto gap-y-12">
+            <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 mt-16 w-10/12 mx-auto gap-y-12">
                 <Fade cascade direction="up" damping={0.1}>
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
-                    <AvatarTeam imgUrl="/images/maskot-stand.png" link="https://www.linkedin.com" role="Project Manager" name="Maskot Baskara S.T M.Eng" />
+                    {teamData.map(p =>
+                        <AvatarTeam imgUrl={p.imgUrl} link={p.link} role={p.role} name={p.name} />
+                    )}
                 </Fade>
             </div>
         </div>
@@ -154,12 +147,9 @@ const AboutUsPage = () => {
             </div>
             <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 text-white mt-16 w-10/12 mx-auto gap-y-12">
                 <Fade cascade direction="up" damping={0.1}>
-                    <AvatarMainTeam path="cloud" name="Maskot Baskara S.T M.Eng" role="Universitas Baksara" imgUrl="/images/maskot-stand.png" />
-                    <AvatarMainTeam path="cloud" name="Maskot Baskara S.T M.Eng" role="Universitas Baksara" imgUrl="/images/maskot-stand.png" />
-                    <AvatarMainTeam path="ml" name="Maskot Baskara S.T M.Eng" role="Universitas Baksara" imgUrl="/images/maskot-stand.png" />
-                    <AvatarMainTeam path="ml" name="Maskot Baskara S.T M.Eng" role="Universitas Baksara" imgUrl="/images/maskot-stand.png" />
-                    <AvatarMainTeam path="android" name="Maskot Baskara S.T M.Eng" role="Universitas Baksara" imgUrl="/images/maskot-stand.png" />
-                    <AvatarMainTeam path="android" name="Maskot Baskara S.T M.Eng" role="Universitas Baksara" imgUrl="/images/maskot-stand.png" />
+                    {teamIntiData.map(p =>
+                        <AvatarMainTeam path={p.path} name={p.name} role={p.role} imgUrl={p.imgUrl} />
+                    )}
                 </Fade>
             </div>
             <Fade>

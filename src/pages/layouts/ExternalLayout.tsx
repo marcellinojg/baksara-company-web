@@ -8,7 +8,7 @@ import DownloadAppLink from "../../components/common/DownloadAppLink"
 import { ScrollTopButton } from "../../components/common/Button"
 
 const ExternalLayout = (props: ExternalLayoutProps) => {
-    const { children, showBanner = false, title = 'Baksara Indonesia', showFooter = true } = props
+    const { children, showBanner = false, title = 'Baksara', showFooter = true } = props
     const [showSidebar, setShowSidebar] = useState<boolean>(false)
     const { translate } = useTranslation()
 
@@ -57,23 +57,23 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
                             <div className="lg:w-4/12 w-full flex flex-col ">
                                 <b className="text-2xl text-primary dark:text-white mb-4 mt-8">{translate('Get in touch with us')}</b>
                                 <div className="flex flex-col gap-2">
-                                    <FooterFragments.FooterSocialLink Icon={FaEnvelope} label="admin@baksara.id" to="https://www.instagram.com" />
-                                    <FooterFragments.FooterSocialLink Icon={FaInstagram} label="@baksara.id" to="https://www.instagram.com" />
-                                    <FooterFragments.FooterSocialLink Icon={FaYoutube} label="Baksara Indonesia" to="https://www.instagram.com" />
-                                    <FooterFragments.FooterSocialLink Icon={FaLinkedin} label="Baksara Indonesia" to="https://www.instagram.com" />
+                                    <FooterFragments.FooterSocialLink Icon={FaEnvelope} label="baksara.official@gmail.com" to="mailto:baksara.official@gmail.com" />
+                                    <FooterFragments.FooterSocialLink Icon={FaInstagram} label="@baksara.official" to="https://www.instagram.com/baksara.official" />
+                                    <FooterFragments.FooterSocialLink Icon={FaYoutube} label="Baksara" to="https://www.youtube.com/@Baksara" />
+                                    <FooterFragments.FooterSocialLink Icon={FaLinkedin} label="Baksara" to="https://linkedin.com/company/baksara" />
                                     {/* <FooterFragments.FooterSocialLink Icon={FaFileAlt} label="Privacy Policy" to="https://www.instagram.com" /> */}
                                 </div>
                             </div>
                         </div>
                         <div className="flex lg:flex-row flex-col items-center justify-between gap-2.5 py-4 lg:px-[10vw] px-[5vw]  border-t-[1px] border-primary-light dark:border-primary-darker">
                             <span className="text-black dark:text-white md:text-start text-center">
-                                2023 © Baksara Indonesia. <br className="md:hidden block" /> {translate('Hak cipta dilindungi')}.
+                                2023 © Baksara. <br className="md:hidden block" /> {translate('Hak cipta dilindungi')}.
                             </span>
                             <div className="flex items-center gap-3">
-                                <FooterFragments.FooterSocialButton Icon={FaInstagram} to="https://www.instagram.com" />
-                                <FooterFragments.FooterSocialButton Icon={FaEnvelope} to="mailto:marcellinojg06@gmail.com" />
-                                <FooterFragments.FooterSocialButton Icon={FaYoutube} to="https://www.youtube.com" />
-                                <FooterFragments.FooterSocialButton Icon={FaLinkedin} to="https://www.linkedin.com" />
+                                <FooterFragments.FooterSocialButton Icon={FaInstagram} to="https://www.instagram.com/baksara.official" />
+                                <FooterFragments.FooterSocialButton Icon={FaEnvelope} to="mailto:baksara.official@gmail.com" />
+                                <FooterFragments.FooterSocialButton Icon={FaYoutube} to="https://www.youtube.com/@Baksara" />
+                                <FooterFragments.FooterSocialButton Icon={FaLinkedin} to="https://linkedin.com/company/baksara" />
                             </div>
                         </div>
                     </div>

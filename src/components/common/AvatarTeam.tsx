@@ -56,11 +56,11 @@ export const AvatarMainTeam = (props: AvatarMainTeamProps) => {
     </div>
 }
 
-interface AvatarMainTeamProps extends AvatarTeamProps {
+export interface AvatarMainTeamProps extends AvatarTeamProps {
     path: 'cloud' | 'android' | 'ml'
 }
 
-interface AvatarTeamProps {
+export interface AvatarTeamProps {
     link?: string,
     imgUrl: string,
     name: string,
