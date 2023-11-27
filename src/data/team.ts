@@ -3,37 +3,37 @@ import { AvatarTeamProps } from "../components/common/AvatarTeam";
 const teamData : AvatarTeamProps[] = [
     {
         name: 'Glenn Steven Santoso',
-        role: 'CEO',
+        role: 'Chief Executive Officer',
         imgUrl : '/images/maskot-stand.png',
         link: 'https://www.linkedin.com/in/glenn-santoso/'
     },
     {
         name: 'Theofilus Arifin',
-        role: 'COO',
+        role: 'Chief Operating Officer',
         imgUrl : '/images/maskot-stand.png',
         link: 'https://www.linkedin.com/in/theofilusarifin'
     },
     {
         name: 'Rony Hartono Irawan',
-        role: 'CMO',
+        role: 'Chief Marketing Officer',
         imgUrl : '/images/maskot-stand.png',
         link: 'https://www.linkedin.com/in/rony-hartono-irawan'
     },
     {
         name: 'Hans Wirjawan',
-        role: 'CFO',
+        role: 'Chief Financial Officer',
         imgUrl : '/images/maskot-stand.png',
         link: 'https://www.linkedin.com/in/hans-wirjawan-snahfu'
     },
     {
         name: 'Achmad Nashruddin Riskynanda',
-        role: 'CCO',
+        role: 'Chief Communication Officer',
         imgUrl : '/images/maskot-stand.png',
         link: 'https://www.linkedin.com/in/achmadnr9'
     },
     {
         name: 'Okyan Awang Ramadhana',
-        role: 'CTO',
+        role: 'Chief Technology Officer',
         imgUrl : '/images/maskot-stand.png',
         link: 'https://www.linkedin.com/in/okyan-awang-ramadhana'
     },
