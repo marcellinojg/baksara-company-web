@@ -10,6 +10,7 @@ import FeatureCard from "../../components/common/FeatureCard"
 import { FeatureModal } from "../../components/internal/Modal"
 import teamData from "../../data/team"
 import teamIntiData from "../../data/team_inti"
+import featuresData from "../../data/features"
 
 
 const AboutUsPage = () => {
@@ -73,52 +74,18 @@ const AboutUsPage = () => {
                 <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl">{translate('Fitur Kami')}</h1>
             </Fade>
             <div className="flex flex-wrap items-stretch justify-center gap-12 gap-y-24 mt-24">
-            <Fade cascade direction="up" damping={0.1}>
-                <FeatureCard
-                        setTitle={setFeatureTitle}
-                        setDescription={setFeatureDescription}
-                        setIsModalActive={setIsModalActive}
-                        title={'Lorem, ipsum. 1'}
-                        subtitle="Lorem, ipsum dolor sit amet."
-                        description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo beatae porro, animi sed soluta saepe accusamus non atque sapiente?'}
-                        iconLink="/images/maskot-wave.png"
-                    />
-                    <FeatureCard
-                        setTitle={setFeatureTitle}
-                        setDescription={setFeatureDescription}
-                        setIsModalActive={setIsModalActive}
-                        title={'Lorem, ipsum. 2'}
-                        subtitle="Lorem, ipsum dolor sit amet."
-                        description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo beatae porro, animi sed soluta saepe accusamus non atque sapiente?'}
-                        iconLink="/images/maskot-wave.png"
-                    />
-                    <FeatureCard
-                        setTitle={setFeatureTitle}
-                        setDescription={setFeatureDescription}
-                        setIsModalActive={setIsModalActive}
-                        title={'Lorem, ipsum. 3'}
-                        subtitle="Lorem, ipsum dolor sit amet."
-                        description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo beatae porro, animi sed soluta saepe accusamus non atque sapiente?'}
-                        iconLink="/images/maskot-wave.png"
-                    />
-                    <FeatureCard
-                        setTitle={setFeatureTitle}
-                        setDescription={setFeatureDescription}
-                        setIsModalActive={setIsModalActive}
-                        title={'Lorem, ipsum. 4'}
-                        subtitle="Lorem, ipsum dolor sit amet."
-                        description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo beatae porro, animi sed soluta saepe accusamus non atque sapiente?'}
-                        iconLink="/images/maskot-wave.png"
-                    />
-                    <FeatureCard
-                        setTitle={setFeatureTitle}
-                        setDescription={setFeatureDescription}
-                        setIsModalActive={setIsModalActive}
-                        title={'Lorem, ipsum. 5'}
-                        subtitle="Lorem, ipsum dolor sit amet."
-                        description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo beatae porro, animi sed soluta saepe accusamus non atque sapiente?'}
-                        iconLink="/images/maskot-wave.png"
-                    />
+                <Fade cascade direction="up" damping={0.1}>
+                    {featuresData.map(f =>
+                        <FeatureCard
+                            setTitle={setFeatureTitle}
+                            setDescription={setFeatureDescription}
+                            setIsModalActive={setIsModalActive}
+                            title={f.title}
+                            subtitle={f.subtitle}
+                            description={f.description}
+                            iconLink={f.iconLink}
+                        />
+                    )}
                 </Fade>
             </div>
         </div>
