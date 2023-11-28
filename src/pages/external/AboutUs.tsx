@@ -94,7 +94,7 @@ const AboutUsPage = () => {
             <Fade direction="up">
                 <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl">{translate('Perkenalkan Tim Kami')}</h1>
             </Fade>
-            <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 mt-16 w-10/12 mx-auto gap-y-12">
+            <div className="grid 2xl:grid-cols-6 xl:grid-cols-3 grid-cols-2 mt-16 w-10/12 mx-auto gap-y-12">
                 <Fade cascade direction="up" damping={0.1}>
                     {teamData.map(p =>
                         <AvatarTeam imgUrl={p.imgUrl} link={p.link} role={p.role} name={p.name} />
@@ -104,7 +104,7 @@ const AboutUsPage = () => {
         </div>
         {/* Main Team Bangkit */}
         <div className="min-w-screen min-h-[80dvh]  py-16  bg-primary-light dark:bg-primary-dark overflow-hidden relative mb-16 transition duration-300">
-            <div className="flex lg:flex-row w-10/12 flex-col items-center lg:justify-between justify-center mx-auto">
+            <div className="flex xl:flex-row w-10/12 flex-col items-center lg:justify-between justify-center mx-auto">
                 <Fade cascade direction="up" damping={0.1}>
                     <h1 className="lg:text-5xl text-3xl font-family-secondary font-bold text-white transition duration-300">{translate('From Bangkit to Baksara, Baksara for Indonesia')}</h1>
                     <div className="flex flex-wrap justify-center items-center gap-12 mt-8">
@@ -114,7 +114,7 @@ const AboutUsPage = () => {
                     </div>
                 </Fade>
             </div>
-            <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 text-white mt-16 w-10/12 mx-auto gap-y-12">
+            <div className="grid 2xl:grid-cols-6 xl:grid-cols-3 grid-cols-2 text-white mt-16 w-10/12 mx-auto gap-y-12">
                 <Fade cascade direction="up" damping={0.1}>
                     {teamIntiData.map(p =>
                         <AvatarMainTeam path={p.path} name={p.name} role={p.role} imgUrl={p.imgUrl} />

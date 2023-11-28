@@ -17,8 +17,8 @@ export const AvatarTeam = (props: AvatarTeamProps) => {
                 </span>
             </button>
         </div>
-        <b className="md:w-48 w-[35vw] break-words text-center">{name}</b>
-        <span className="md:w-48 w-[35vw] break-words text-center">{role}</span>
+        <b className=" break-words text-center">{name}</b>
+        <span className=" break-words text-center">{role}</span>
     </div>
 }
 
@@ -51,8 +51,8 @@ export const AvatarMainTeam = (props: AvatarMainTeamProps) => {
             <img src={imgUrl} className="md:w-48 md:h-48 w-[35vw] h-[35vw] object-cover bg-navbar-light rounded-full" alt={`Foto ${name}`} />
             {PathElement}
         </div>
-        <b className="md:w-48 w-[35vw] break-words text-center">{name}</b>
-        <span className="md:w-48 w-[35vw] break-words text-center">{role}</span>
+        <b className="break-words text-center">{name}</b>
+        <span className="break-words text-center">{role}</span>
     </div>
 }
 
