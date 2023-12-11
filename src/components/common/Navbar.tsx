@@ -16,7 +16,7 @@ const Navbar = (props: NavbarProps) => {
         setShowSidebar(false)
     }
 
-    return <nav className={`fixed w-full top-0 h-[75px] bg-primary  transition duration-300 z-20 ${showBanner === false && 'floating-shadow-lg'}`}>
+    return <nav className={`fixed w-full top-0 h-[75px] bg-primary  transition duration-300 z-20 ${showBanner === false && 'shadow-xl'}`}>
         <div className="flex justify-between items-center lg:px-[12.5vw] md:px-[8vw] px-[7.5vw] h-full gap-[2vw]">
             {/* Brand */}
             <Link to={ROUTES.EXTERNAL.LANDING} className="">
