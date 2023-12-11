@@ -1,7 +1,7 @@
 import { FaDownload } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import { ROUTES } from "../../models/consts/routes"
-import { DarkModeButton, LanguageButton, NavbarButton, PrimaryButton, SecondaryButton } from "./Button"
+import { DarkModeButton, LanguageButton, NavbarButton } from "./Button"
 import { HiOutlineBars3 } from 'react-icons/hi2'
 import { Dispatch, SetStateAction } from "react"
 import useTranslation from "../../hooks/useTranslation"

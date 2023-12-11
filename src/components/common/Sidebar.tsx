@@ -1,7 +1,7 @@
 import { Dispatch, MouseEventHandler, SetStateAction, useRef } from "react"
 import useOutsideAlerter from "../../hooks/useOutsideAlerter"
 import useTranslation from "../../hooks/useTranslation"
-import { DarkModeButton, LanguageButton, NavbarButton, PrimaryButton } from "./Button"
+import { DarkModeButton, LanguageButton, NavbarButton } from "./Button"
 import { IconType } from "react-icons"
 import { ROUTES } from "../../models/consts/routes"
 import { FaDownload, FaHome, FaQuestionCircle, FaUsers } from "react-icons/fa"
