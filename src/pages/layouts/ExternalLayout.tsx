@@ -26,8 +26,7 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
             {showBanner === true &&
                 <div className="top-[75px] py-1.5 text-sm text-center flex items-end justify-center bg-primary-light  transition duration-300 absolute w-full z-10 text-white">
                     <p className="lg:pt-0">
-                        { translate('Tuliskan cerita anda menggunakan aksara jawa!')} <br className="md:hidden block" />
-                        <a href="https://www.google.com" target="_blank" className="font-bold ml-2 underline">{translate('Kunjungi Baksara Translate!')} →</a>
+                        <a href="https://www.google.com" target="_blank" className="font-bold ml-2 underline">{translate('Kunjungi Baksara Translate!')}</a>
                     </p>
                 </div>
             }
@@ -44,15 +43,15 @@ const ExternalLayout = (props: ExternalLayoutProps) => {
                                 <img className="select-none absolute opacity-5 rotate-45 -top-28 lg:-right-28 hidden lg:block" src="/images/secondary-pattern-light.png" width={300} alt="Main Pattern"></img>
                                 <img className="select-none absolute opacity-5 rotate-45 -top-28 lg:-left-28 hidden lg:block" src="/images/secondary-pattern-light.png" width={300} alt="Main Pattern"></img>
                                 <p className="">
-                                    {translate('Baksara: Menghadirkan budaya Jawa melalui pembelajaran bahasa Jawa. Kami berkomitmen untuk melestarikan warisan budaya ini dan membantu Anda belajar bahasa Jawa dengan lebih mudah dan menyenangkan. Ayo bersama-sama menjaga dan merayakan kekayaan bahasa Jawa')}
+                                    {translate('Menghadirkan budaya Jawa melalui pembelajaran bahasa Jawa. Kami berkomitmen untuk melestarikan warisan budaya ini dan membantu Anda belajar bahasa Jawa dengan lebih mudah dan menyenangkan')}
                                 </p>
                                 <span className="font-bold text-xl  mt-6 mb-2.5">
-                                    {translate('Unduh Sekarang!')}
+                                    {translate('Unduh Baksara sekarang!')}
                                 </span>
                                 <DownloadAppLink />
                             </div>
                             <div className="lg:w-4/12 w-full flex flex-col ">
-                                <b className="text-2xl  mb-4 mt-8">{translate('Get in touch with us')}</b>
+                                <b className="text-2xl  mb-4 mt-8">{translate('Hubungi Kami')}</b>
                                 <div className="flex flex-col gap-2">
                                     <FooterFragments.FooterSocialLink Icon={FaEnvelope} label="baksara.official@gmail.com" to="mailto:baksara.official@gmail.com" />
                                     <FooterFragments.FooterSocialLink Icon={FaInstagram} label="@baksara.official" to="https://www.instagram.com/baksara.official" />

@@ -10,8 +10,8 @@ export const FooterDownload = () => {
 
         <div className="lg:w-4/12 md:w-2/3 w-10/12 flex flex-col gap-5">
             <Fade cascade damping={0.1}>
-                <h1 className="font-bold font-family-secondary text-4xl w-11/12">{translate('Dapatkan sekarang di App Store dan Play Store, belajar bersama Baksara! 🚀')}</h1>
-                <span className="md:text-lg text-primary-dark dark:text-white">{translate('Mari Lestarikan Budaya Jawa dengan menjadi penutur bahasa jawa yang baik #JawaIkuKita!')}</span>
+                <h1 className="font-bold font-family-secondary text-4xl w-11/12">{translate('Unduh sekarang di App Store dan Play Store. ')}</h1>
+                <span className="md:text-lg text-primary-dark dark:text-white">{translate('Mari bergerak bersama dan mewujudkan #LestariBudayaJawa ❤️')}</span>
                 <div className="flex items-center gap-2">
                     <DownloadAppLink />
                 </div>

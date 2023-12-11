@@ -32,16 +32,16 @@ const AboutUsPage = () => {
 
     return <ExternalLayout title={translate('Baksara | Tentang Kami')}>
         {/* Section 1 About Us */}
-        <div className="min-w-screen min-h-[100dvh] flex items-center justify-center pb-12 bg-about">
+        <div className="min-w-screen min-h-[100dvh] flex items-center justify-center pb-12 bg-gradient-dark">
             <div className="lg:w-2/3 w-10/12 flex lg:flex-row flex-col items-center justify-center">
                 <Fade>
                     <img src="/images/maskot-stand-cropped.png" width={150} className="lg:h-[60vh] lg:w-auto lg:pt-0 pt-24" alt="Maskot Baksara Standing" />
                 </Fade>
                 <div className="pl-[5vw] flex flex-col gap-5 lg:pt-0 pt-12">
                     <Fade cascade damping={0.5}>
-                        <h1 className="font-bold font-family-secondary lg:text-6xl text-3xl text-primary dark:text-white transition duration-300">{translate('Halo Bolo-Bolo')}</h1>
-                        <h2 className="font-semibold lg:text-3xl text-xl text-primary dark:text-white transition duration-300">{translate('Nepangaken, jenengku Bakbolbot.')}</h2>
-                        <p className="lg:text-xl text-lg text-primary dark:text-white transition duration-300">{translate('Mari menjelajahi Baksara bersamaku!')}</p>
+                        <h1 className="font-bold font-family-secondary lg:text-6xl text-3xl text-white transition duration-300">{translate('Hai Sobat Baksara! 👋')}</h1>
+                        <h2 className="font-semibold lg:text-3xl text-xl text-white transition duration-300">{translate('Perkenalkan, aku Petruk.')}</h2>
+                        <p className="lg:text-xl text-lg text-white transition duration-300">{translate('Mari menjelajahi Baksara bersamaku! 🚀')}</p>
                     </Fade>
                 </div>
             </div>
@@ -52,7 +52,7 @@ const AboutUsPage = () => {
             <div className="w-full flex lg:flex-row flex-col-reverse items-center justify-center gap-4 py-12">
                 <div className="lg:w-7/12 w-10/12 text-white lg:pr-[10%]">
                     <Fade cascade damping={0.3}>
-                        <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl">{translate('Sugeng Rawuh ing Baksara!')}</h1>
+                        <h1 className="font-family-secondary font-bold lg:text-5xl text-3xl">{translate('Teman terbaikmu untuk belajar Bahasa Jawa')}</h1>
                         <br />
                         <p className="lg:text-xl text-justify">
                             {translate('Baksara adalah sebuah platform belajar bahasa Jawa yang didedikasikan untuk memperkaya pemahaman Anda tentang budaya Jawa melalui modul, kegiatan, dan latihan. 📚')}
@@ -106,7 +106,7 @@ const AboutUsPage = () => {
         <div className="min-w-screen min-h-[80dvh]  py-16 bg-primary overflow-hidden relative mb-16 transition duration-300">
             <div className="flex xl:flex-row w-10/12 flex-col items-center lg:justify-between justify-center mx-auto">
                 <Fade cascade direction="up" damping={0.1}>
-                    <h1 className="lg:text-5xl text-3xl font-family-secondary font-bold text-white transition duration-300">{translate('From Bangkit to Baksara, Baksara for Indonesia')}</h1>
+                    <h1 className="lg:text-5xl text-3xl font-family-secondary font-bold text-white transition duration-300">{translate('Dari Bangkit untuk Indonesia')}</h1>
                     <div className="flex flex-wrap justify-center items-center gap-12 mt-8">
                         <img src="/images/logo-km.webp" width={120} className="lg:w-[120px] w-16" alt="" />
                         <img src="/images/logo-google.webp" width={120} className="lg:w-[120px] w-16" alt="" />
@@ -127,7 +127,7 @@ const AboutUsPage = () => {
                     <div className="lg:pr-[10%] lg:w-2/3">
                         <p className="text-white lg:text-xl text-justify">{translate('Sebagai bagian dari hasil program Bangkit 2023, Baksara berhasil meraih posisi top-20 dalam Proyek Capstone berbasis Produk dan menerima dukungan inkubasi dari Google Indonesia serta Dikti Kemdikbudristek. 🏅')}</p>
                         <br />
-                        <p className="text-white lg:text-xl text-justify">{translate('Baksara mendapat dukungan dari Google Indonesia, Direktorat Jenderal Pendidikan Tinggi, Universitas Indonesia, dan Bangkit Academy yang dipimpin oleh Google, Tokopedia, Gojek, & Traveloka.')}</p>
+                        <p className="text-white lg:text-xl text-justify">{translate('Baksara mendapat dukungan dari Google Indonesia, Direktorat Jenderal Pendidikan Tinggi, Institut Teknologi Sepuluh Nopember, dan Bangkit Academy yang dipimpin oleh Google, Tokopedia, Gojek, & Traveloka.')}</p>
                     </div>
                 </div>
             </Fade>

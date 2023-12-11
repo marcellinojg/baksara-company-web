@@ -13,7 +13,7 @@ import { ActivitySlider, TestimoniSlider } from "../../components/common/Slide"
 
 const LandingPage = () => {
     const { translate } = useTranslation()
-    return <ExternalLayout showBanner={true}>
+    return <ExternalLayout showBanner={false}>
         <div className="bg-landing">
             <div className="w-full min-h-[100dvh] flex lg:flex-row flex-col-reverse items-center justify-center lg:pt-0 pt-[150px]">
                 {/* <img src="/images/ternary-pattern-dark.png" width={200} className="absolute select-none block dark:hidden opacity-[0.03] lg:h-[150vh] top-14 w-auto lg:rotate-12" alt="" /> */}
@@ -41,7 +41,7 @@ const LandingPage = () => {
                     <img src="/images/maskot-wave.png" className="xl:translate-x-24 mx-auto " width={700} alt="Maskot Baksara Waving" />
                 </Fade>
             </div>
-            <div className="lg:-translate-y-1/3 lg:mt-0 mt-12 pb-16">
+            <div className="lg:mt-0 mt-12 pb-16">
                 <SupportedBy />
             </div>
         </div>

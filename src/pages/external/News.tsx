@@ -11,7 +11,7 @@ const NewsPage = () => {
             <span>Baksara<br /> News</span>
         </Jumbotron>
         <div className="min-w-screen text-primary dark:text-white py-16 transition duration-300 w-10/12 mx-auto">
-            <h1 className="font-bold font-family-secondary lg:text-5xl text-3xl">{translate('Berita Lokal')}</h1>
+            <h1 className="font-bold font-family-secondary lg:text-5xl text-3xl">{translate('Berita Kebudayaan Jawa')}</h1>
             <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-12 gap-10">
                 <NewsCard
                     imgUrl="/images/maskot-wave.png"
