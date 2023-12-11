@@ -6,7 +6,7 @@
 
 @layer components {
   .sidebar {
-    @apply fixed h-full bg-white dark:bg-primary-lighter text-black dark:text-white floating-shadow-lg right-0 top-0 
+    @apply fixed h-full bg-primary text-white floating-shadow-lg right-0 top-0 
     lg:hidden flex flex-col px-[6%] pt-12 pb-8 justify-between gap-6
     md:w-[40vw] w-[85vw] z-30
     transition duration-300;
@@ -49,7 +49,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .floating-shadow-lg {
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgba(27, 31, 35, 0.502) 0px 20px 20px -5px;
 }
 
 .bg-ternary {
@@ -71,9 +71,37 @@ input[type="number"]::-webkit-outer-spin-button {
   z-index: -1;
 }
 
-.bg-main-pattern{
-  background: url('/images/main-pattern-dark.png');
+.bg-main-pattern {
+  background: url("/images/main-pattern-dark.png");
   background-size: contain;
-  background-color:rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
+.bg-landing,
+.bg-about {
+  position: relative;
+}
+
+.bg-landing:before {
+  background: url("/images/bg-landing.jpeg");
+  opacity: 0.05;
+}
+
+.bg-about:before {
+  opacity: 0.08;
+  background: url("/images/bg-about.jpg");
+}
+
+.bg-landing:before,
+.bg-about:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

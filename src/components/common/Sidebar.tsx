@@ -1,7 +1,7 @@
 import { Dispatch, MouseEventHandler, SetStateAction, useRef } from "react"
 import useOutsideAlerter from "../../hooks/useOutsideAlerter"
 import useTranslation from "../../hooks/useTranslation"
-import { DarkModeButton, LanguageButton, PrimaryButton } from "./Button"
+import { DarkModeButton, LanguageButton, NavbarButton, PrimaryButton } from "./Button"
 import { IconType } from "react-icons"
 import { ROUTES } from "../../models/consts/routes"
 import { FaDownload, FaHome, FaQuestionCircle, FaUsers } from "react-icons/fa"
@@ -33,10 +33,10 @@ const Sidebar = (props: SidebarProps) => {
                 <SidebarItem to={ROUTES.EXTERNAL.FEATURES} label={translate('Fitur Kami')} Icon={TbHeartHandshake} state={{ section: 'features' }} onClick={() => scrollToTarget(document.querySelector('#features'), 70)} />
                 <SidebarItem to={ROUTES.EXTERNAL.NEWS} label={translate('Berita')} Icon={HiNewspaper} />
                 <SidebarItem to={ROUTES.EXTERNAL.FAQ} label={translate('FAQ')} Icon={FaQuestionCircle} />
-                <PrimaryButton onClick={handleScrollDownload} className="w-full flex justify-between items-center rounded py-3 px-6 mt-8 mb-4 text-white">
+                <NavbarButton onClick={handleScrollDownload} className="w-full flex justify-between items-center rounded py-3 px-6 mt-8 mb-4">
                     <span className="font-semibold">{translate('Unduh Aplikasi')}</span>
                     <FaDownload />
-                </PrimaryButton>
+                </NavbarButton>
 
             </div>
             <div className="flex items-center justify-center gap-4">

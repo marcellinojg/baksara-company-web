@@ -47,7 +47,20 @@ export const PrimaryButton = (props: ButtonProps) => {
         children = <></>
     } = props
 
-    return <button type={type} onClick={onClick} className={`bg-primary-light hover:bg-primary dark:bg-primary-dark dark:hover:bg-primary-darker transition duration-300 text-white ${className}`}>
+    return <button type={type} onClick={onClick} className={`bg-primary hover:bg-primary-dark  transition duration-300 text-white ${className}`}>
+        {children}
+    </button>
+}
+
+export const NavbarButton = (props: ButtonProps) => {
+    const {
+        type = 'button',
+        onClick = () => { },
+        className,
+        children = <></>
+    } = props
+
+    return <button type={type} onClick={onClick} className={`bg-white hover:bg-slate-100 dark:bg-primary-dark dark:hover:bg-primary-darker transition duration-300 text-primary dark:text-white ${className}`}>
         {children}
     </button>
 }
@@ -84,7 +97,7 @@ export const ScrollTopButton = () => {
 
     return <>
         {isActive &&
-            <Fade direction="up" className="fixed bottom-4 right-4 bg-primary group rounded-full z-20" duration={300}>
+            <Fade direction="up" className="fixed bottom-4 right-4 bg-primary-dark group rounded-full z-20" duration={300}>
                 <button className="w-full h-full  flex items-center justify-center" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     <div className="flex items-center justify-center gap-4 text-white hover:w-56 w-12 h-12 hover:px-4  transition-width duration-200">
                         <span className="text-xl ">

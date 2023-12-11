@@ -12,7 +12,7 @@ const FaqPage = () => {
         <Jumbotron>
             <span>Frequently <br /> Asked<br /> Questions</span>
         </Jumbotron>
-        <div className="w-10/12 mx-auto grid lg:grid-cols-2 grid-cols-1 mt-24 gap-10 text-primary dark:primary-dark">
+        <div className="w-10/12 mx-auto grid grid-cols-1 mt-24 gap-10 text-primary dark:text-white">
             <div className="flex flex-col gap-4">
                 <h1 className="font-family-secondary font-bold text-3xl">{translate('Tentang Baksara')}</h1>
                 {dataFaq.tentang.map(f =>

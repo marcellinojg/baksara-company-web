@@ -28,7 +28,7 @@ export const FooterDownload = () => {
 
 export const FooterSocialButton = (props: FooterSocialButtonProps) => {
     const { Icon, to } = props
-    return <a href={to} target="_blank" className="cursor-pointer transition duration-300 bg-primary-light hover:bg-primary dark:bg-primary-dark dark:hover:bg-primary-darker text-white floating-shadow-md p-4 rounded-full" >
+    return <a href={to} target="_blank" className="cursor-pointer transition duration-300 bg-primary-dark hover:bg-primary-darker text-white floating-shadow-md p-4 rounded-full" >
         <Icon />
     </a>
 }
@@ -36,7 +36,7 @@ export const FooterSocialButton = (props: FooterSocialButtonProps) => {
 export const FooterSocialLink = (props: FooterSocialLinkProps) => {
     const { Icon, to, label } = props
 
-    return <div className="flex items-center gap-2 text-primary dark:text-white">
+    return <div className="flex items-center gap-2 text-white">
         <Icon />
         <a href={to} target="_blank">{label}</a>
     </div>

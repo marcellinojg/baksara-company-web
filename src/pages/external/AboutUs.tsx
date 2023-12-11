@@ -32,7 +32,7 @@ const AboutUsPage = () => {
 
     return <ExternalLayout title={translate('Baksara | Tentang Kami')}>
         {/* Section 1 About Us */}
-        <div className="min-w-screen min-h-[100dvh] flex items-center justify-center pb-12">
+        <div className="min-w-screen min-h-[100dvh] flex items-center justify-center pb-12 bg-about">
             <div className="lg:w-2/3 w-10/12 flex lg:flex-row flex-col items-center justify-center">
                 <Fade>
                     <img src="/images/maskot-stand-cropped.png" width={150} className="lg:h-[60vh] lg:w-auto lg:pt-0 pt-24" alt="Maskot Baksara Standing" />
@@ -47,7 +47,7 @@ const AboutUsPage = () => {
             </div>
         </div>
         {/* Section 2 About Us */}
-        <div className="min-w-screen min-h-[80dvh] flex items-center justify-center bg-primary-light dark:bg-primary-dark overflow-hidden relative transition duration-300">
+        <div className="min-w-screen min-h-[80dvh] flex items-center justify-center bg-primary overflow-hidden relative transition duration-300">
             <img src="/images/main-pattern-light.png" className="absolute opacity-[0.03] select-none -top-1 rotate-45" alt="" />
             <div className="w-full flex lg:flex-row flex-col-reverse items-center justify-center gap-4 py-12">
                 <div className="lg:w-7/12 w-10/12 text-white lg:pr-[10%]">
@@ -103,7 +103,7 @@ const AboutUsPage = () => {
             </div>
         </div>
         {/* Main Team Bangkit */}
-        <div className="min-w-screen min-h-[80dvh]  py-16  bg-primary-light dark:bg-primary-dark overflow-hidden relative mb-16 transition duration-300">
+        <div className="min-w-screen min-h-[80dvh]  py-16 bg-primary overflow-hidden relative mb-16 transition duration-300">
             <div className="flex xl:flex-row w-10/12 flex-col items-center lg:justify-between justify-center mx-auto">
                 <Fade cascade direction="up" damping={0.1}>
                     <h1 className="lg:text-5xl text-3xl font-family-secondary font-bold text-white transition duration-300">{translate('From Bangkit to Baksara, Baksara for Indonesia')}</h1>

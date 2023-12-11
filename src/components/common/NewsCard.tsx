@@ -49,7 +49,7 @@ const NewsCard = (props: NewsCardProps) => {
 
 
             </div>
-            <div className="bg-white dark:bg-primary-light py-8 px-6 rounded-b flex flex-col gap-4">
+            <div className="bg-white dark:bg-primary py-8 px-6 rounded-b flex flex-col gap-4">
                 <span className="font-semibold">{formatDate(date, getLocale())}</span>
                 <h2 className="text-2xl font-bold">{title}</h2>
                 <p className="text-justify whitespace-pre-line">{description}</p>
