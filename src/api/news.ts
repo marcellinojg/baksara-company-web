@@ -21,7 +21,7 @@ export const updateNews = async ({ id, news }: { id: string, news: NewsModel }):
 
 export const deleteNews = async (id: string) => {
     const instance = createAxiosInstance()
-    const res = await instance.delete(`beritas/${id}`)
+    await instance.delete(`beritas/${id}`)
     return 'SUCCESS'
 }
 

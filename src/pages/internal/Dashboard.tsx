@@ -1,7 +1,7 @@
 import NewsCard from "../../components/common/NewsCard"
 import InternalLayout from "../layouts/InternalLayout"
 import { NewsCardSkeletons } from "../../components/common/Skeletons"
-import { useMutation, useQuery } from "react-query"
+import { useQuery } from "react-query"
 import { getAllNews } from "../../api/news"
 import useTranslation from "../../hooks/useTranslation"
 
