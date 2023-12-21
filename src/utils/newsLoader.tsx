@@ -2,6 +2,8 @@ import { Dispatch, ReactNode, useEffect, SetStateAction } from 'react';
 import NewsModel from '../models/interface/news';
 import useLoader from '../hooks/useLoader';
 import { useAlert } from '../hooks/useAlert';
+import { getNews } from '../api/news';
+import ALERT_TYPE from '../models/consts/alert';
 
 
 export const NewsLoader = (props: NewsLoader) => {
@@ -10,32 +12,15 @@ export const NewsLoader = (props: NewsLoader) => {
     const { addAlert } = useAlert()
 
     useEffect(() => {
-        console.log(setData, id, addAlert)
         showLoader()
-        hideLoader()
+        getNews(id).then((news) => setData(news)).catch(() => addAlert({
+            type: ALERT_TYPE.ERROR,
+            title: 'Terjadi kesalahan !',
+            message: 'Gagal saat mengambil data.'
+        })).then(() => hideLoader())
 
     }, [])
     return <>{children}</>
-}
-
-
-export const AllNewsLoader = (props: AllNewsLoader) => {
-    const { children, setData } = props
-    const { showLoader, hideLoader } = useLoader()
-    const { addAlert } = useAlert()
-
-    useEffect(() => {
-        console.log(setData, addAlert)
-        showLoader()
-        hideLoader()
-    }, [])
-    return <>{children}</>
-}
-
-
-interface AllNewsLoader {
-    children: ReactNode
-    setData: Dispatch<SetStateAction<NewsModel[]>>
 }
 
 interface NewsLoader {

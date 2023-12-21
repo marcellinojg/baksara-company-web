@@ -2,18 +2,50 @@ import { FaEdit, FaPaperPlane, FaTrash } from "react-icons/fa"
 import useTranslation from "../../hooks/useTranslation"
 import formatDate from "../../utils/formatDate"
 import NewsModel from "../../models/interface/news"
-import { Link } from "react-router-dom"
-import { DYNAMIC_ROUTES } from "../../models/consts/routes"
+import { Link, useNavigate } from "react-router-dom"
+import { DYNAMIC_ROUTES, ROUTES } from "../../models/consts/routes"
 import { useState } from "react"
 import { ConfirmationModal } from "../internal/Modal"
+import { useMutation } from "react-query"
+import { deleteNews } from "../../api/news"
+import useLoader from "../../hooks/useLoader"
+import { useAlert } from "../../hooks/useAlert"
+import ALERT_TYPE from "../../models/consts/alert"
 
 const NewsCard = (props: NewsCardProps) => {
     const { getLocale } = useTranslation()
-    const { imgUrl, date, title, description, source, sourceYear, link, isAdmin = false } = props
+    const { imgUrl, date, title, description, source, sourceYear, link, isAdmin = false, id } = props
     const [showModal, setShowModal] = useState<boolean>(false)
+    const { showLoader, hideLoader } = useLoader()
+    const { addAlert } = useAlert()
+    const navigate = useNavigate()
+
+    const deleteNewsMutation = useMutation(deleteNews, {
+        onSuccess: () => {
+            addAlert({
+                type: ALERT_TYPE.SUCCESS,
+                title: 'Sukses !',
+                message: 'Berhasil menghapus berita !'
+            })
+            navigate(ROUTES.INTERNAL.DASHBOARD)
+        },
+        onError: () => {
+            addAlert({
+                type: ALERT_TYPE.ERROR,
+                title: 'Terjadi kesalahan !',
+                message: 'Gagal menghapus berita !'
+            })
+        },
+        onMutate: () => {
+            showLoader()
+        },
+        onSettled: () => {
+            hideLoader()
+        }
+    })
 
     const handleDelete = () => {
-
+        deleteNewsMutation.mutate(id!)
     }
 
     return <>

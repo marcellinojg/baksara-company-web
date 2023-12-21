@@ -49,6 +49,7 @@ const en_EN: Record<string, string> = {
     'Berlangganan': 'Subscription',
     'Umum': 'General',
     'Dari Bangkit untuk Indonesia': 'From Bangkit to Indonesia',
+    'Maaf, tidak ada berita yang ditemukan 😔': 'Sorry, no news found 😔',
     
 }
 

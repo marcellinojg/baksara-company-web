@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from "swiper/modules"
 import { ActivitySlider, TestimoniSlider } from "../../components/common/Slide"
+import testimoniData from "../../data/testimonial"
 
 
 const LandingPage = () => {
@@ -112,18 +113,12 @@ const LandingPage = () => {
                     loop={true}
                     modules={[Autoplay]}
                 >
-                    <SwiperSlide className="py-16">
-                        <TestimoniSlider name="Maskot Baskara S.T M.Eng" role="Dosen Informatika Universitas Baksara" testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum quos sunt vero quas alias delectus culpa quasi quaerat ducimus?" />
-                    </SwiperSlide>
-                    <SwiperSlide className="py-16">
-                        <TestimoniSlider name="Maskot Baskara S.T M.Eng" role="Dosen Informatika Universitas Baksara" testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum quos sunt vero quas alias delectus culpa quasi quaerat ducimus?" />
-                    </SwiperSlide>
-                    <SwiperSlide className="py-16">
-                        <TestimoniSlider name="Maskot Baskara S.T M.Eng" role="Dosen Informatika Universitas Baksara" testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum quos sunt vero quas alias delectus culpa quasi quaerat ducimus?" />
-                    </SwiperSlide>
-                    <SwiperSlide className="py-16">
-                        <TestimoniSlider name="Maskot Baskara S.T M.Eng" role="Dosen Informatika Universitas Baksara" testimoni="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum quos sunt vero quas alias delectus culpa quasi quaerat ducimus?" />
-                    </SwiperSlide>
+                    {testimoniData.map((t, index) =>
+                        <SwiperSlide key={index} className="py-16">
+                            <TestimoniSlider {...t} />
+                        </SwiperSlide>
+                    )
+                    }
                 </Swiper>
             </div>
         </div>

@@ -8,8 +8,8 @@ export default defineConfig({
     react(),
     ogPlugin({
       basic: {
-        title: 'Baksara',
-        description: 'Baksara Adalah 123',
+        title: 'Baksara Indonesia',
+        description: 'Baksara adalah startup yang berfokus pada penyediaan media pembelajaran digital Bahasa Jawa bagi murid-murid sma untuk membantu pembelajaran mereka di sekolah melalui aplikasi mobile multi-platform.',
         image: {
           url: 'https://www.baksara.marcellinojg.site/images/app_icon.png',
           secureUrl: 'https://www.baksara.marcellinojg.site/images/app_icon.png',
@@ -20,8 +20,8 @@ export default defineConfig({
       },
       twitter: {
         card: 'summary',
-        title: 'Baksara',
-        description: 'Baksara Adalah 123',
+        title: 'Baksara Indonesia',
+        description: 'Baksara adalah startup yang berfokus pada penyediaan media pembelajaran digital Bahasa Jawa bagi murid-murid sma untuk membantu pembelajaran mereka di sekolah melalui aplikasi mobile multi-platform.',
         image: 'https://www.baksara.marcellinojg.site/images/app_icon.png',
       },
     }),

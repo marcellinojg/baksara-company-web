@@ -5,20 +5,23 @@ import { LocalizationProvider } from "./contexts/LocalizationContext"
 import { ThemeProvider } from "./contexts/ThemeContext"
 import AppRoutes from "./routes"
 import { useLocalStorage } from 'usehooks-ts';
+import { QueryClient, QueryClientProvider } from "react-query"
 
 const App = () => {
   const [locale, setLocale] = useLocalStorage<'id-ID' | 'en-EN'>('lang', 'id-ID')
   const [isDarkMode, setIsDarkMode] = useLocalStorage<boolean>('dark', false)
-
+  const queryClient = new QueryClient()
 
   return (
     <ThemeProvider isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}>
       <LoaderProvider>
         <AlertProvider>
           <LocalizationProvider locale={locale} setLocale={setLocale}>
-            <AuthProvider>
-              <AppRoutes />
-            </AuthProvider>
+            <QueryClientProvider client={queryClient}>
+              <AuthProvider>
+                <AppRoutes />
+              </AuthProvider>
+            </QueryClientProvider>
           </LocalizationProvider>
         </AlertProvider>
       </LoaderProvider>

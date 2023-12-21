@@ -5,6 +5,13 @@ import { SubmitHandler, useForm } from "react-hook-form"
 import NewsModel from "../../models/interface/news"
 import { DarkModeButton, LanguageButton } from "../../components/common/Button"
 import FormNews from "../../components/internal/FormNews"
+import { useMutation } from "react-query"
+import { postNews } from "../../api/news"
+import useLoader from "../../hooks/useLoader"
+import { useAlert } from "../../hooks/useAlert"
+import ALERT_TYPE from "../../models/consts/alert"
+import { useNavigate } from "react-router-dom"
+import { ROUTES } from "../../models/consts/routes"
 
 const CreateNews = () => {
     const [imgUrl, setImgUrl] = useState<string>()
@@ -15,7 +22,33 @@ const CreateNews = () => {
     const [sourceYear, setSourceYear] = useState<number>()
     const [link, setLink] = useState<string>()
     const form = useForm<NewsModel>()
+    const { showLoader, hideLoader } = useLoader()
+    const navigate = useNavigate()
+    const { addAlert } = useAlert()
     const { watch } = form
+    const postNewsMutation = useMutation(postNews, {
+        onSuccess: () => {
+            addAlert({
+                type: ALERT_TYPE.SUCCESS,
+                title: 'Sukses !',
+                message: 'Berhasil membuat berita baru !'
+            })
+            navigate(ROUTES.INTERNAL.DASHBOARD)
+        },
+        onError: () => {
+            addAlert({
+                type: ALERT_TYPE.ERROR,
+                title: 'Terjadi kesalahan !',
+                message: 'Gagal membuat Berita !'
+            })
+        },
+        onMutate: () => {
+            showLoader()
+        },
+        onSettled: () => {
+            hideLoader()
+        }
+    })
 
     useEffect(() => {
         const subscription = watch((field) => {
@@ -38,7 +71,7 @@ const CreateNews = () => {
     }, [])
 
     const onSubmit: SubmitHandler<NewsModel> = (data: NewsModel) => {
-        console.log(data)
+        postNewsMutation.mutate(data)
     }
 
     return <InternalLayout>

@@ -6,8 +6,13 @@ import NewsModel from "../../models/interface/news"
 import { DarkModeButton, LanguageButton } from "../../components/common/Button"
 import FormNews from "../../components/internal/FormNews"
 import { NewsLoader } from "../../utils/newsLoader"
-import { Navigate, useParams } from "react-router-dom"
+import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { ROUTES } from "../../models/consts/routes"
+import { useMutation } from "react-query"
+import { updateNews } from "../../api/news"
+import ALERT_TYPE from "../../models/consts/alert"
+import { useAlert } from "../../hooks/useAlert"
+import useLoader from "../../hooks/useLoader"
 
 const EditNews = () => {
     const [news, setNews] = useState<NewsModel | string>('')
@@ -20,7 +25,34 @@ const EditNews = () => {
     const [sourceYear, setSourceYear] = useState<number>()
     const [link, setLink] = useState<string>()
     const form = useForm<NewsModel>()
+    const { showLoader, hideLoader } = useLoader()
+    const navigate = useNavigate()
+    const { addAlert } = useAlert()
     const { watch } = form
+
+    const updateNewsMutation = useMutation(updateNews, {
+        onSuccess: () => {
+            addAlert({
+                type: ALERT_TYPE.SUCCESS,
+                title: 'Sukses !',
+                message: 'Berhasil mengupdate berita !'
+            })
+            navigate(ROUTES.INTERNAL.DASHBOARD)
+        },
+        onError: () => {
+            addAlert({
+                type: ALERT_TYPE.ERROR,
+                title: 'Terjadi kesalahan !',
+                message: 'Gagal mengupdate Berita !'
+            })
+        },
+        onMutate: () => {
+            showLoader()
+        },
+        onSettled: () => {
+            hideLoader()
+        }
+    })
 
     useEffect(() => {
         const subscription = watch((field) => {
@@ -43,13 +75,16 @@ const EditNews = () => {
     }, [])
 
     const onSubmit: SubmitHandler<NewsModel> = (data: NewsModel) => {
-        console.log(data)
+        updateNewsMutation.mutate({
+            id: id!,
+            news: data
+        })
     }
 
     return <InternalLayout>
-        {news === '404' && <Navigate to={ROUTES.INTERNAL.DASHBOARD} />}
-        {news &&
-            <NewsLoader setData={setNews} id={id!}>
+        <NewsLoader setData={setNews} id={id!}>
+            {news === '404' && <Navigate to={ROUTES.INTERNAL.DASHBOARD} />}
+            {news &&
                 <div className="min-w-screen text-primary dark:text-white py-8 transition duration-300 w-10/12 mx-auto">
                     <h1 className="font-bold font-family-secondary lg:text-5xl text-3xl">Buat News</h1>
                     <div className="grid lg:grid-cols-3 grid-cols-1 mt-8 gap-12">
@@ -86,8 +121,8 @@ const EditNews = () => {
                         </div>
                     </div>
                 </div>
-            </NewsLoader>
-        }
+            }
+        </NewsLoader>
     </InternalLayout>
 }
 

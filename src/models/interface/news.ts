@@ -1,5 +1,6 @@
 
 interface NewsModel {
+    id?: string
     date: string
     imgUrl: string
     title: string
