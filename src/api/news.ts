@@ -2,9 +2,9 @@ import NewsModel from "../models/interface/news"
 import { createAxiosInstance } from "../utils/createAxiosInstance"
 
 export const getAllNews = async (): Promise<NewsModel[]> => {
-    const instance = createAxiosInstance()
+    const instance = createAxiosInstance(true)
     const res = await instance.get('beritas')
-    return res.data as NewsModel[]
+    return res.data.payload as NewsModel[]
 }
 
 export const postNews = async (news: NewsModel): Promise<NewsModel> => {

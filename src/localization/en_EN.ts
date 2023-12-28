@@ -14,7 +14,7 @@ const en_EN: Record<string, string> = {
     'Ikuti kami di Instagram': "Follow us on Instagram",
     'Baksara | Tentang Kami': 'Baksara | About Us',
     'Baksara | Berita': 'Baksara | News',
-    "Baksara | Masuk": '"Baksara | Sign In',
+    "Baksara | Masuk": 'Baksara | Sign In',
     'Perkenalkan Tim Kami': 'Meet Our Team',
     'Kata mereka tentang Baksara': 'What they say about Baksara',
     'Sumber': 'Source',

@@ -4,6 +4,7 @@ import ALERT_TYPE from "../models/consts/alert";
 import useLoader from "../hooks/useLoader";
 import useTranslation from "../hooks/useTranslation";
 import { LoginUser } from "../models/interface/auth";
+import { postLogin } from "../api/auth";
 
 interface AuthContextModel {
     id?: string | null
@@ -37,9 +38,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         console.log(user)
         try {
             showLoader()
-            // const loginResponse = await postLogin(user)
-            // setAccessToken(await loginResponse.data.accessToken)
-            // if (loginResponse.error != null) throw loginResponse.error
+            const loginResponse = await postLogin(user)
+            setAccessToken(await loginResponse.payload.accessToken)
+            if (loginResponse.error != null) throw loginResponse.error
 
 
             // const userResponse = await getUser(loginResponse.data.accessToken)
@@ -56,6 +57,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
         }
         catch (error) {
+            console.log(error)
             addAlert({
                 type: ALERT_TYPE.ERROR,
                 title: translate('Login Failed'),

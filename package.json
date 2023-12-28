@@ -2,6 +2,7 @@
   "name": "baksara-company-web",
   "private": true,
   "version": "0.0.0",
+  "proxy": "https://www.staging.baksara.id",
   "type": "module",
   "homepage": "https://baksara.marcellinojg.site",
   "scripts": {

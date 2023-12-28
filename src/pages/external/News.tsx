@@ -9,7 +9,7 @@ import { NewsCardSkeletons } from "../../components/common/Skeletons"
 
 const NewsPage = () => {
     const { translate } = useTranslation()
-    const getAllNewsQuery = useQuery('allNews', getAllNews)
+    const { data: news, isLoading } = useQuery('allNews', getAllNews)
 
     return <ExternalLayout title={translate('Baksara | Berita')}>
         <Jumbotron>
@@ -18,13 +18,13 @@ const NewsPage = () => {
         <div className="min-w-screen text-primary dark:text-white py-16 transition duration-300 w-10/12 mx-auto">
             <h1 className="font-bold font-family-secondary lg:text-5xl text-3xl lg:text-start text-center">{translate('Berita Kebudayaan Jawa')}</h1>
 
-            {getAllNewsQuery.isLoading ?
+            {isLoading ?
                 <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-12 gap-10">
                     <NewsCardSkeletons />
                 </div>
                 :
-                getAllNewsQuery.data ?
-                    getAllNewsQuery.data.map((news, index) =>
+                news && news.length > 0 ?
+                    news.map((news, index) =>
                         <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-12 gap-10">
                             <NewsCard key={index} {...news} />
                         </div>
@@ -33,7 +33,7 @@ const NewsPage = () => {
                         <img src="/images/maskot-wave.png" alt="Baksara Not Found" className="min-w-[300px] max-w-[700px] w-1/2" />
                         <h1 className="text-center font-bold lg:text-3xl text-2xl">{translate('Maaf, tidak ada berita yang ditemukan 😔')}</h1>
                     </div>
-            }        
+            }
 
             {/* <NewsCard
                     imgUrl="/images/maskot-wave.png"
