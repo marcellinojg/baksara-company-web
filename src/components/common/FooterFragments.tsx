@@ -20,7 +20,7 @@ export const FooterDownload = () => {
 
         <div className="md:w-[500px] lg:mt-0 mt-10 w-10/12">
             <Fade>
-                <img src="/images/footer-mockup.webp" width={500} className="w-full" />
+                <img src="/images/footer-mockup.png" width={500} className="w-full" />
             </Fade>
         </div>
     </div>
