@@ -7,10 +7,10 @@ export const AvatarTeam = (props: AvatarTeamProps) => {
 
     return <div className="flex flex-col items-center justify-center lg:w-auto relative mx-auto">
         <div className="relative mb-4">
-            <img src={imgUrl} className="md:w-48 md:h-48 w-[35vw] h-[35vw] object-cover bg-navbar-light rounded-full" alt={`Foto ${name}`} />
+            <img src={imgUrl} className="md:w-48 md:h-48 w-[35vw] h-[35vw] object-cover rounded-full" alt={`Foto ${name}`} />
             <button
                 onClick={() => window.open(link, '_blank')}
-                className="text-2xl floating-shadow-md p-3 rounded-full bg-[#0072b1] hover:bg-[#3a77a9] transition duration-300 absolute -bottom-0 -right-0"
+                className="text-2xl floating-shadow-md p-3 rounded-full bg-[#0072b1] hover:bg-[#3a77a9] transition duration-300 absolute bottom-2 right-2"
             >
                 <span className="text-white">
                     <FaLinkedin />
@@ -30,17 +30,17 @@ export const AvatarMainTeam = (props: AvatarMainTeamProps) => {
 
     switch (path) {
         case 'cloud':
-            PathElement = <div className="text-2xl floating-shadow-lg p-3 rounded-full bg-white transition duration-300 absolute -bottom-0 -right-0">
+            PathElement = <div className="text-2xl floating-shadow-lg p-3 rounded-full bg-white transition duration-300 absolute bottom-2 right-2">
                 <img src='/images/gcp.png' width={24} className="object-contain w-6 h-6" />
             </div>
             break
         case 'ml':
-            PathElement = <div className="text-2xl floating-shadow-lg p-3 rounded-full bg-white transition duration-300 absolute -bottom-0 -right-0">
+            PathElement = <div className="text-2xl floating-shadow-lg p-3 rounded-full bg-white transition duration-300 absolute bottom-2 right-2">
                 <img src="/images/tensorflow.svg" width={24} className="object-contain w-6 h-6" />
             </div>
             break
         case 'android':
-            PathElement = <div className="text-2xl floating-shadow-lg p-3 rounded-full bg-white transition duration-300 absolute -bottom-0 -right-0">
+            PathElement = <div className="text-2xl floating-shadow-lg p-3 rounded-full bg-white transition duration-300 absolute bottom-2 right-2">
                 <img src="/images/android.svg" width={24} className="object-contain w-6 h-6 scale-[1.75]" />
             </div>
             break
@@ -48,7 +48,7 @@ export const AvatarMainTeam = (props: AvatarMainTeamProps) => {
 
     return <div className="flex flex-col items-center justify-center lg:w-auto relative mx-auto">
         <div className="relative mb-4">
-            <img src={imgUrl} className="md:w-48 md:h-48 w-[35vw] h-[35vw] object-cover bg-navbar-light rounded-full" alt={`Foto ${name}`} />
+            <img src={imgUrl} className="md:w-48 md:h-48 w-[35vw] h-[35vw] object-cover rounded-full" alt={`Foto ${name}`} />
             {PathElement}
         </div>
         <b className="break-words text-center">{name}</b>

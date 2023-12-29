@@ -6,7 +6,9 @@ import { ThemeProvider } from "./contexts/ThemeContext"
 import AppRoutes from "./routes"
 import { useLocalStorage } from 'usehooks-ts';
 import { QueryClient, QueryClientProvider } from "react-query"
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Navigate } from "react-router-dom"
+import { ErrorBoundary } from "react-error-boundary"
+import { ROUTES } from "./models/consts/routes"
 
 
 const App = () => {
@@ -15,21 +17,24 @@ const App = () => {
   const queryClient = new QueryClient()
 
   return (
-    <ThemeProvider isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}>
-      <LoaderProvider>
-        <AlertProvider>
-          <LocalizationProvider locale={locale} setLocale={setLocale}>
-            <QueryClientProvider client={queryClient}>
-              <BrowserRouter>
-                <AuthProvider>
-                  <AppRoutes />
-                </AuthProvider>
-              </BrowserRouter>
-            </QueryClientProvider>
-          </LocalizationProvider>
-        </AlertProvider>
-      </LoaderProvider>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ErrorBoundary fallback={<Navigate to={ROUTES.EXTERNAL.LANDING} state={{errorMessage: 'Unexpected Error'}} />}>
+        <ThemeProvider isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}>
+          <LoaderProvider>
+            <AlertProvider>
+              <LocalizationProvider locale={locale} setLocale={setLocale}>
+                <QueryClientProvider client={queryClient}>
+                  <AuthProvider>
+                    <AppRoutes />
+                  </AuthProvider>
+                </QueryClientProvider>
+              </LocalizationProvider>
+            </AlertProvider>
+          </LoaderProvider>
+        </ThemeProvider>
+      </ErrorBoundary>
+    </BrowserRouter>
+
   )
 }
 

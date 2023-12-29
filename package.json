@@ -19,6 +19,7 @@
     "react-awesome-reveal": "^4.2.5",
     "react-country-flag": "^3.1.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.12",
     "react-hook-form": "^7.47.0",
     "react-icons": "^4.11.0",
     "react-initials-avatar": "^1.1.2",

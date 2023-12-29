@@ -46,6 +46,7 @@ const AboutUsPage = () => {
                 </div>
             </div>
         </div>
+
         {/* Section 2 About Us */}
         <div className="min-w-screen min-h-[80dvh] flex items-center justify-center bg-primary overflow-hidden relative transition duration-300">
             <img src="/images/main-pattern-light.png" className="absolute opacity-[0.03] select-none -top-1 rotate-45" alt="" />

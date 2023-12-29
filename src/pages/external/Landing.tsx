@@ -10,10 +10,24 @@ import 'swiper/css/autoplay';
 import { Autoplay } from "swiper/modules"
 import { ActivitySlider, TestimoniSlider } from "../../components/common/Slide"
 import testimoniData from "../../data/testimonial"
+import { useLocation } from "react-router-dom"
+import { useEffect } from "react"
+import { useAlert } from "../../hooks/useAlert"
+import ALERT_TYPE from "../../models/consts/alert"
 
 
 const LandingPage = () => {
     const { translate } = useTranslation()
+    const { state } = useLocation()
+    const { addAlert } = useAlert()
+    useEffect(() => {
+        if (state && state.errorMessage) addAlert({
+            type: ALERT_TYPE.ERROR,
+            title: 'Terjadi Kesalahan',
+            message: state.errorMessage
+        })
+    }, [state])
+
     return <ExternalLayout showBanner={false}>
         <div className="bg-landing">
             <div className="w-full min-h-[100dvh] flex lg:flex-row flex-col-reverse items-center justify-center lg:pt-0 pt-[150px]">
