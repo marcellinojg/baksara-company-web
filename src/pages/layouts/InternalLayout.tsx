@@ -3,12 +3,8 @@ import { FaBars, FaSignOutAlt } from "react-icons/fa"
 import InitialsAvatar from 'react-initials-avatar';
 import useOutsideAlerter from "../../hooks/useOutsideAlerter";
 import { SecondaryButton } from "../../components/common/Button";
-import { useNavigate } from "react-router-dom";
-import { useAlert } from "../../hooks/useAlert";
-import ALERT_TYPE from "../../models/consts/alert";
 import Sidebar from "../../components/internal/Sidebar";
-import { ROUTES } from '../../models/consts/routes';
-import { User } from "../../models/interface/auth";
+import useAuth from "../../hooks/useAuth";
 
 interface InternalLayoutProps {
     children?: ReactNode
@@ -23,27 +19,17 @@ const InternalLayout = (props: InternalLayoutProps) => {
     const sidebarRef = useRef(null)
     useOutsideAlerter(dropdownRef, () => setDropdownActive(false))
     useOutsideAlerter(sidebarRef, () => setSidebarActive(false))
-    const userData: User = {
-        name: 'test',
-        token: ''
-    }
-    const navigate = useNavigate()
-    const alert = useAlert()
+    const { signOut } = useAuth()
+    const { user } = useAuth()
+
 
     const handleLogout = () => {
-        // signOut()
-        localStorage.removeItem('accessToken')
-        navigate(ROUTES.EXTERNAL.LANDING)
-        alert.addAlert({
-            type: ALERT_TYPE.INFO,
-            title: 'Autentikasi terbarui',
-            message: 'Anda berhasil Sign out !'
-        })
+        signOut()
     }
 
 
     return <>
-        {userData &&
+        {user &&
             <div className="min-w-screen min-h-screen bg-login pb-24">
                 <header className="fixed top-0 w-full p-4 lg:px-10 z-10 flex justify-between place-items-center bg-primary floating-shadow-md">
                     <button onClick={() => setSidebarActive(true)} className="flex lg:gap-4 items-center bg-white hover:bg-slate-200 p-4 md:px-10 text-primary font-bold rounded-full transition duration-300">
@@ -52,16 +38,16 @@ const InternalLayout = (props: InternalLayoutProps) => {
                     </button>
                     <div className="relative">
                         <button className="text-primary  bg-white font-bold h-12 w-12 rounded-md" onClick={() => setDropdownActive(prev => !prev)}>
-                            <InitialsAvatar name={userData.name} />
+                            <InitialsAvatar name={user.email!} />
                         </button>
                         {/* Dropdown */}
                         {dropdownActive &&
                             <div className="bg-white p-4 absolute floating-shadow-md -translate-x-[300px] translate-y-4 w-[350px] rounded-lg" ref={dropdownRef}>
                                 <div className="flex flex-col items-start justify-center w-full">
                                     <div className="flex items-center justify-start gap-4 border-b-2 border-slate-400 pb-4 w-full">
-                                        <InitialsAvatar className="bg-white text-primary border-2 border-primary  font-bold h-[50px] w-[50px] rounded-md flex items-center justify-center" name={userData.name} />
+                                        <InitialsAvatar className="bg-white text-primary border-2 border-primary  font-bold h-[50px] w-[50px] rounded-md flex items-center justify-center" name={user.email!} />
                                         <div className="flex flex-col">
-                                            <span>{userData.name}</span>
+                                            <span>{user.email!}</span>
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-4 w-full mt-4">
@@ -77,7 +63,7 @@ const InternalLayout = (props: InternalLayoutProps) => {
                             </div>
                         }
 
-                        <Sidebar userData={userData} sidebarActive={sidebarActive} sidebarRef={sidebarRef} setSidebarActive={setSidebarActive} />
+                        <Sidebar userData={user} sidebarActive={sidebarActive} sidebarRef={sidebarRef} setSidebarActive={setSidebarActive} />
                     </div>
                 </header>
                 {useTopBarrier &&

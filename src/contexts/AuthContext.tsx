@@ -1,86 +1,114 @@
-import { ReactNode, createContext, useState } from "react"
+import { ReactNode, createContext, useEffect, useState } from "react"
 import { useAlert } from "../hooks/useAlert"
 import ALERT_TYPE from "../models/consts/alert";
 import useLoader from "../hooks/useLoader";
 import useTranslation from "../hooks/useTranslation";
 import { LoginUser } from "../models/interface/auth";
-import { postLogin } from "../api/auth";
+import supabase from "../../supabase";
+import { Session, User } from "@supabase/supabase-js";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../models/consts/routes";
 
 interface AuthContextModel {
-    id?: string | null
-    name?: string | null
-    email?: string | null
-    accessToken?: string | null
+    user: User | null
+    session: Session | null
     signIn: (user: LoginUser) => void
     signOut: () => void
 }
 
 export const AuthContext = createContext<AuthContextModel>({
-    id: null,
-    name: null,
-    email: null,
-    accessToken: null,
+    user: null,
+    session: null,
     signIn: (_user: LoginUser) => { },
     signOut: () => { }
 })
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-    const localUser = JSON.parse(localStorage.getItem('user') || '{}') as any
-    const [id, setId] = useState<string | null>((localUser && localUser.id) || null)
-    const [email, setEmail] = useState<string | null>((localUser && localUser.email) || null)
-    const [name, setName] = useState<string | null>((localUser && localUser.name) || null)
-    const [accessToken, setAccessToken] = useState<string | null>((localUser && localUser.accessToken) || null)
+    const [user, setUser] = useState<User | null>(null)
+    const [session, setSession] = useState<Session | null>(null)
     const { addAlert } = useAlert()
     const { showLoader, hideLoader } = useLoader()
     const { translate } = useTranslation()
+    const navigate = useNavigate()
 
-    const signIn = async (user: LoginUser) => {
-        console.log(user)
+    useEffect(() => {
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            setSession(session)
+        })
+    }, [])
+
+    useEffect(() => {
+        if (session)
+            supabase.auth.getUser().then(({ data: { user } }) => {
+                setUser(user)
+            })
+    }, [session])
+
+    const signIn = async (loginInput: LoginUser) => {
         try {
             showLoader()
-            const loginResponse = await postLogin(user)
-            setAccessToken(await loginResponse.payload.accessToken)
-            if (loginResponse.error != null) throw loginResponse.error
-
-
-            // const userResponse = await getUser(loginResponse.data.accessToken)
-            // if (userResponse.error != null) throw userResponse.error
-            // localStorage.setItem('user', JSON.stringify({
-            //     name: userResponse.data.name,
-            //     email: userResponse.data.email,
-            //     id: userResponse.data.id,
-            //     accessToken: loginResponse.data.accessToken
-            // }))
-            // setEmail(userResponse.data.email)
-            // setName(userResponse.data.name)
-            // setId(userResponse.data.id)
-
+            const { data, error } = await supabase.auth.signInWithPassword(loginInput);
+            if (error) {
+                addAlert({
+                    type: ALERT_TYPE.ERROR,
+                    title: translate('Login Failed'),
+                    message: error.message,
+                })
+                return
+            }
+            const { user, session } = data;
+            setUser(user)
+            setSession(session)
+            navigate(ROUTES.INTERNAL.DASHBOARD)
+            addAlert({
+                type: ALERT_TYPE.INFO,
+                title: 'Autentikasi terbarui',
+                message: 'Anda berhasil Sign out !'
+            })
         }
-        catch (error) {
-            console.log(error)
+        catch {
             addAlert({
                 type: ALERT_TYPE.ERROR,
                 title: translate('Login Failed'),
-                message: translate('Email or Password is incorrect.'),
+                message: 'Terjadi kesalahan !',
             })
         } finally {
             hideLoader()
         }
     }
 
-    const signOut = () => {
-        setId(null)
-        setEmail(null)
-        setName(null)
-        setAccessToken(null)
-        localStorage.removeItem('user')
+    const signOut = async () => {
+        try {
+            const { error } = await supabase.auth.signOut()
+            if (error) {
+                addAlert({
+                    type: ALERT_TYPE.ERROR,
+                    title: translate('Sign Out Failed'),
+                    message: error.message,
+                })
+                return
+            }
+            setUser(null)
+            setSession(null)
+            navigate(ROUTES.EXTERNAL.LANDING)
+            addAlert({
+                type: ALERT_TYPE.INFO,
+                title: 'Autentikasi terbarui',
+                message: 'Anda berhasil Sign out !'
+            })
+        }
+        catch {
+            addAlert({
+                type: ALERT_TYPE.ERROR,
+                title: translate('Sign Out Failed'),
+                message: 'Terjadi kesalahan !',
+            })
+        }
     }
 
     return <AuthContext.Provider value={{
-        id: id,
-        email: email,
-        name: name,
-        accessToken: accessToken,
+        user: user,
+        session: session,
         signIn: signIn,
         signOut: signOut
     }}>

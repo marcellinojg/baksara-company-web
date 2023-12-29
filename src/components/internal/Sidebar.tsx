@@ -2,8 +2,8 @@ import { FaChartLine, FaNewspaper, FaTimes } from "react-icons/fa"
 import { ROUTES } from "../../models/consts/routes"
 import { Link, useLocation } from "react-router-dom"
 import { MutableRefObject, SetStateAction } from "react"
-import { User } from "../../models/interface/auth"
 import { IconType } from "react-icons"
+import { User } from "@supabase/supabase-js"
 
 
 

@@ -107,6 +107,7 @@ const CreateNews = () => {
                         source={source || 'Baksara'}
                         sourceYear={sourceYear || 2023}
                         link={link || 'https://www.google.com'}
+                        isPlaceholder={true}
                     />
                 </div>
             </div>

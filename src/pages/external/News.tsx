@@ -9,7 +9,10 @@ import { NewsCardSkeletons } from "../../components/common/Skeletons"
 
 const NewsPage = () => {
     const { translate } = useTranslation()
-    const { data: news, isLoading } = useQuery('allNews', getAllNews)
+    const { data: news, isLoading } = useQuery('allNews', () => getAllNews(), {
+        refetchOnWindowFocus: false
+    })
+
 
     return <ExternalLayout title={translate('Baksara | Berita')}>
         <Jumbotron>

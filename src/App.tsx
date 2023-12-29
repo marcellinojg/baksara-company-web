@@ -6,6 +6,8 @@ import { ThemeProvider } from "./contexts/ThemeContext"
 import AppRoutes from "./routes"
 import { useLocalStorage } from 'usehooks-ts';
 import { QueryClient, QueryClientProvider } from "react-query"
+import { BrowserRouter } from "react-router-dom"
+
 
 const App = () => {
   const [locale, setLocale] = useLocalStorage<'id-ID' | 'en-EN'>('lang', 'id-ID')
@@ -18,9 +20,11 @@ const App = () => {
         <AlertProvider>
           <LocalizationProvider locale={locale} setLocale={setLocale}>
             <QueryClientProvider client={queryClient}>
-              <AuthProvider>
-                <AppRoutes />
-              </AuthProvider>
+              <BrowserRouter>
+                <AuthProvider>
+                  <AppRoutes />
+                </AuthProvider>
+              </BrowserRouter>
             </QueryClientProvider>
           </LocalizationProvider>
         </AlertProvider>

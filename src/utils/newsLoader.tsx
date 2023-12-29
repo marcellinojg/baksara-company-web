@@ -26,5 +26,5 @@ export const NewsLoader = (props: NewsLoader) => {
 interface NewsLoader {
     id: string
     children: ReactNode
-    setData: Dispatch<SetStateAction<NewsModel | string>>
+    setData: Dispatch<SetStateAction<NewsModel | string | null>>
 }

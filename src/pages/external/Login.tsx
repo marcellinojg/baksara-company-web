@@ -20,14 +20,14 @@ const LoginPage = () => {
                 <h1 className="text-center font-family-secondary font-bold lg:text-5xl text-4xl">Sign In</h1>
                 <div className="space-y-4 my-7">
                     <div className="w-11/12 flex flex-col gap-1 mx-auto">
-                        <label htmlFor="email" className="font-semibold">{translate('Nama Pengguna')}</label>
+                        <label htmlFor="email" className="font-semibold">{translate('Email')}</label>
                         <input
                             type="text"
                             id="email"
-                            placeholder={translate('Masukkan nama pengguna anda')}
+                            placeholder={translate('Masukkan Email anda')}
                             className="w-full border-2 border-primary dark:border-none text-primary rounded p-1.5"
                             {...register('email', {
-                                required: 'Nama pengguna harus diisi',
+                                required: 'Email harus diisi',
                                 pattern: {
                                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                     message: "Invalid Email Address"

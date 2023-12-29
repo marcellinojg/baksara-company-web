@@ -15,9 +15,10 @@ import { useAlert } from "../../hooks/useAlert"
 import useLoader from "../../hooks/useLoader"
 
 const EditNews = () => {
-    const [news, setNews] = useState<NewsModel | string>('')
+    const [news, setNews] = useState<any>(null)
     const { id } = useParams()
     const [imgUrl, setImgUrl] = useState<string>()
+    const [isPlaceholder, setIsPlaceholder] = useState<boolean>(false)
     const [date, setDate] = useState<string>(new Date().toISOString())
     const [title, setTitle] = useState<string>()
     const [description, setDescription] = useState<string>()
@@ -64,15 +65,28 @@ const EditNews = () => {
             setDate(field.date!)
             if (field.imgFile && field.imgFile[0]) {
                 setImgUrl(URL.createObjectURL(field.imgFile[0]))
+                setIsPlaceholder(false)
             }
             else {
                 setImgUrl('/images/maskot-wave.png')
+                setIsPlaceholder(true)
             }
         })
 
 
         return () => subscription.unsubscribe()
     }, [])
+
+    useEffect(() => {
+        if(!news || typeof news === 'string') return
+        setTitle(news.title)
+        setDescription(news.description)
+        setSource(news.source)
+        setSourceYear(news.sourceYear)
+        setLink(news.link)
+        setDate(news.date!)
+        setImgUrl(news.imgUrl)
+    }, [news])
 
     const onSubmit: SubmitHandler<NewsModel> = (data: NewsModel) => {
         updateNewsMutation.mutate({
@@ -86,19 +100,20 @@ const EditNews = () => {
             {news === '404' && <Navigate to={ROUTES.INTERNAL.DASHBOARD} />}
             {news &&
                 <div className="min-w-screen text-primary dark:text-white py-8 transition duration-300 w-10/12 mx-auto">
-                    <h1 className="font-bold font-family-secondary lg:text-5xl text-3xl">Buat News</h1>
+                    <h1 className="font-bold font-family-secondary lg:text-5xl text-3xl">Edit News</h1>
                     <div className="grid lg:grid-cols-3 grid-cols-1 mt-8 gap-12">
                         <div className="lg:col-span-2 ">
                             <h2 className="font-bold font-family-secondary lg:text-3xl text-xl pb-5">Form</h2>
                             <FormNews
                                 form={form}
                                 onSubmit={onSubmit}
-                                imgUrl={''}
-                                date={''}
-                                title={''}
-                                description={''}
-                                source={''}
-                                link={''}
+                                imgUrl={news && news.imgUrl}
+                                date={news && news.date}
+                                title={news && news.title}
+                                description={news && news.description}
+                                source={news && news.source}
+                                sourceYear={news && news.sourceYear}
+                                link={news && news.link}
                             />
                         </div>
                         <div className="lg:order-last order-first">
@@ -117,6 +132,7 @@ const EditNews = () => {
                                 source={source || 'Baksara'}
                                 sourceYear={sourceYear || 2023}
                                 link={link || 'https://www.google.com'}
+                                isPlaceholder={isPlaceholder}
                             />
                         </div>
                     </div>

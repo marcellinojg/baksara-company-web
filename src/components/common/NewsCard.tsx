@@ -1,33 +1,37 @@
-import { FaEdit, FaPaperPlane, FaTrash } from "react-icons/fa"
+import { FaPaperPlane, FaTrash } from "react-icons/fa"
 import useTranslation from "../../hooks/useTranslation"
 import formatDate from "../../utils/formatDate"
 import NewsModel from "../../models/interface/news"
-import { Link, useNavigate } from "react-router-dom"
-import { DYNAMIC_ROUTES, ROUTES } from "../../models/consts/routes"
+import { useNavigate } from "react-router-dom"
+import { ROUTES } from "../../models/consts/routes"
 import { useState } from "react"
 import { ConfirmationModal } from "../internal/Modal"
-import { useMutation } from "react-query"
+import { useMutation, useQueryClient } from "react-query"
 import { deleteNews } from "../../api/news"
 import useLoader from "../../hooks/useLoader"
 import { useAlert } from "../../hooks/useAlert"
 import ALERT_TYPE from "../../models/consts/alert"
+import supabase from "../../../supabase"
 
 const NewsCard = (props: NewsCardProps) => {
     const { getLocale } = useTranslation()
-    const { imgUrl, date, title, description, source, sourceYear, link, isAdmin = false, id } = props
+    const { imgUrl, date, title, description, source, sourceYear, link, isAdmin = false, id, isPlaceholder = false } = props
     const [showModal, setShowModal] = useState<boolean>(false)
     const { showLoader, hideLoader } = useLoader()
     const { addAlert } = useAlert()
+    const queryClient = useQueryClient()
+    const publicImgPath = isPlaceholder ? imgUrl : supabase.storage.from('News').getPublicUrl(imgUrl).data.publicUrl
     const navigate = useNavigate()
 
     const deleteNewsMutation = useMutation(deleteNews, {
-        onSuccess: () => {
+        onSuccess: (data) => {
             addAlert({
                 type: ALERT_TYPE.SUCCESS,
                 title: 'Sukses !',
-                message: 'Berhasil menghapus berita !'
+                message: `Berhasil menghapus berita ${data[0].title} !`
             })
             navigate(ROUTES.INTERNAL.DASHBOARD)
+            queryClient.invalidateQueries({ queryKey: ['allNews'] })
         },
         onError: () => {
             addAlert({
@@ -41,26 +45,23 @@ const NewsCard = (props: NewsCardProps) => {
         },
         onSettled: () => {
             hideLoader()
-        }
+        },
+
     })
 
     const handleDelete = () => {
         deleteNewsMutation.mutate(id!)
+        setShowModal(false)
     }
 
     return <>
         <div className="floating-shadow-md rounded">
             <div className="relative group">
-                <img src={imgUrl} className="bg-navbar-light mx-auto h-[250px] object-cover w-full rounded-t group-hover:brightness-90 transition-all duration-300" />
+                <img src={publicImgPath} className="bg-navbar-light mx-auto h-[250px] object-cover w-full rounded-t group-hover:brightness-90 transition-all duration-300" />
                 <div className="absolute top-4 right-4 flex items-center gap-2">
                     {isAdmin === true &&
                         <>
 
-                            <Link to={DYNAMIC_ROUTES.INTERNAL.EDIT_NEWS('1')}
-                                className="transition-all duration-300 p-4 bg-yellow-400 hover:bg-yellow-500 rounded-full group-hover:block hidden text-white"
-                            >
-                                <FaEdit />
-                            </Link>
                             <button
                                 onClick={() => setShowModal(true)}
                                 className="transition-all duration-300 p-4 bg-red-500 hover:bg-red-600 rounded-full group-hover:block hidden text-white"
@@ -99,5 +100,6 @@ export default NewsCard
 
 interface NewsCardProps extends NewsModel {
     isAdmin?: boolean
+    isPlaceholder?: boolean
 }
 

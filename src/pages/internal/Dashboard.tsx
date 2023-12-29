@@ -7,7 +7,9 @@ import useTranslation from "../../hooks/useTranslation"
 
 
 const DashboardPage = () => {
-    const getAllNewsQuery = useQuery('allNews', getAllNews)
+    const getAllNewsQuery = useQuery('allNews', () => getAllNews(), {
+        refetchOnWindowFocus: false
+    })
     const { translate } = useTranslation()
 
     return <InternalLayout>
