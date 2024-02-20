@@ -14,12 +14,17 @@ import { useLocation } from "react-router-dom"
 import { useEffect } from "react"
 import { useAlert } from "../../hooks/useAlert"
 import ALERT_TYPE from "../../models/consts/alert"
+import { useQuery } from "react-query"
+import { getAllNews } from "../../api/news"
 
 
 const LandingPage = () => {
     const { translate } = useTranslation()
     const { state } = useLocation()
     const { addAlert } = useAlert()
+    const { data: news, isLoading } = useQuery('allNews', () => getAllNews(), {
+        refetchOnWindowFocus: false
+    })
     useEffect(() => {
         if (state && state.errorMessage) addAlert({
             type: ALERT_TYPE.ERROR,
@@ -72,36 +77,20 @@ const LandingPage = () => {
                     loop={true}
                     modules={[Autoplay]}
                 >
-                    <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
-                        <ActivitySlider
-                            imgAlt="Gambar Aktivitas"
-                            imgUrl="/images/maskot-wave.png"
-                            title="Title title title 1"
-                            description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus."
-                            source="Media Baksara"
-                            sourceYear={1970}
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
-                        <ActivitySlider
-                            imgAlt="Gambar Aktivitas"
-                            imgUrl="/images/maskot-wave.png"
-                            title="Title title title 2"
-                            description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus."
-                            source="Media Baksara"
-                            sourceYear={1970}
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
-                        <ActivitySlider
-                            imgAlt="Gambar Aktivitas"
-                            imgUrl="/images/maskot-wave.png"
-                            title="Title title title 3"
-                            description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorum iste velit mollitia ratione odit nostrum dolorem maiores, nisi minus."
-                            source="Media Baksara"
-                            sourceYear={1970}
-                        />
-                    </SwiperSlide>
+                    {isLoading ?
+                        <h1>Still Loading</h1> :
+                        (news && news.length > 0 ?
+                            (news.map((n, index) =>
+                                <SwiperSlide key={index} className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
+                                    <ActivitySlider
+                                        {...n}
+                                    />
+                                </SwiperSlide>
+                            ))
+                            :
+                            <>No news</>
+                        )
+                    }
                 </Swiper>
             </div>
         </div>

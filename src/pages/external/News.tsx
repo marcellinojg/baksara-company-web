@@ -27,11 +27,12 @@ const NewsPage = () => {
                 </div>
                 :
                 news && news.length > 0 ?
-                    news.map((news, index) =>
-                        <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-12 gap-10">
+                    <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-12 gap-10">
+                        {news.map((news, index) =>
                             <NewsCard key={index} {...news} />
-                        </div>
-                    ) :
+                        )}  
+                    </div>
+                    :
                     <div className="flex flex-col items-center justify-center gap-4 mt-8 font-family-secondary">
                         <img src="/images/maskot-wave.png" alt="Baksara Not Found" className="min-w-[300px] max-w-[700px] w-1/2" />
                         <h1 className="text-center font-bold lg:text-3xl text-2xl">{translate('Maaf, tidak ada berita yang ditemukan 😔')}</h1>
