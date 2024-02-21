@@ -78,7 +78,7 @@ const LandingPage = () => {
                     loop={true}
                     modules={[Autoplay]}
                 >
-                    {isLoading || true ?
+                    {isLoading ?
                         <NewsSwiperSkeleton /> :
                         (news && news!.length > 0 ?
                             (news!.map((n, index) =>
