@@ -16,6 +16,7 @@ import { useAlert } from "../../hooks/useAlert"
 import ALERT_TYPE from "../../models/consts/alert"
 import { useQuery } from "react-query"
 import { getAllNews } from "../../api/news"
+import { NewsSwiperSkeleton } from "../../components/common/Skeletons"
 
 
 const LandingPage = () => {
@@ -77,10 +78,10 @@ const LandingPage = () => {
                     loop={true}
                     modules={[Autoplay]}
                 >
-                    {isLoading ?
-                        <h1>Still Loading</h1> :
-                        (news && news.length > 0 ?
-                            (news.map((n, index) =>
+                    {isLoading || true ?
+                        <NewsSwiperSkeleton /> :
+                        (news && news!.length > 0 ?
+                            (news!.map((n, index) =>
                                 <SwiperSlide key={index} className="flex lg:flex-row flex-col items-center mx-auto lg:gap-24 gap-12">
                                     <ActivitySlider
                                         {...n}
@@ -88,7 +89,7 @@ const LandingPage = () => {
                                 </SwiperSlide>
                             ))
                             :
-                            <>No news</>
+                            <NewsSwiperSkeleton />
                         )
                     }
                 </Swiper>
