@@ -124,7 +124,7 @@ const AboutUsPage = () => {
             </div>
             <Fade>
                 <div className="flex lg:flex-row flex-col items-center justify-center w-10/12 mx-auto mt-32 gap-12">
-                    <img src="/images/maskot-wave.png" width={360} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
+                    <img src="/images/awarding.png" width={360} className="bg-navbar-light rounded-lg lg:ml-[10%]" alt="" />
                     <div className="lg:pr-[10%] lg:w-2/3">
                         <p className="text-white lg:text-xl text-justify">{translate('Sebagai bagian dari hasil program Bangkit 2023, Baksara berhasil meraih posisi top-20 dalam Proyek Capstone berbasis Produk dan menerima dukungan inkubasi dari Google Indonesia serta Dikti Kemdikbudristek. 🏅')}</p>
                         <br />
